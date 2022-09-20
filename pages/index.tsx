@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <section className="flex flex-col gap-6 justify-center items-center mb-auto min-h-[calc(100vh-220px)]">
         <h1 className="text-6xl font-bold">Hello World!</h1>
         <button className="btn">Primary</button>
-        <p className={styles.description}>{t('name', { name: 'bishesh' })} </p>
+        <p className={styles.description}>{t('name', { name: 'anon' })} </p>
       </section>
     </Page>
   );
