@@ -17,11 +17,11 @@ const Login = () => {
     console.log(formData);
     const [response, error] = await login(formData);
     console.log(response, error);
-    if (!error) {
-      router.push('/');
-    } else {
-      alert(error);
-    }
+    // if (!error) {
+    //   router.push('/');
+    // } else {
+    //   alert(error);
+    // }
   };
   return (
     <div className="flex flex-col items-center">

@@ -12,9 +12,11 @@ const getLocalAccessToken = () => {
   const accessToken = window.localStorage.getItem('accessToken');
   return accessToken;
 };
-const setLocalAccessToken = (token: string) => {
-  const accessToken = window.localStorage.setItem('accessToken', token);
-  return accessToken;
+const setLocalStorage = ({ ...data }) => {
+  Object.keys(data).forEach((key) => {
+    window.localStorage.setItem(key, data[key]);
+  });
+  return;
 };
 const clearLocalStorage = () => {
   localStorage.removeItem('accessToken');
@@ -30,6 +32,7 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   (error) => {
+    console.log('error', error);
     const originalRequest = error.config;
     if (error?.response?.status === 401) {
       clearLocalStorage();
@@ -41,6 +44,19 @@ axiosInstance.interceptors.request.use(
       console.log('this is where refresh end-point goes');
       return axiosInstance(originalRequest);
     }
+    return Promise.reject(error);
+  }
+);
+axiosInstance.interceptors.response.use(
+  async (response) => {
+    const data = await response.data;
+    console.log('this is data', data.access_token);
+    setLocalStorage(data);
+    return response;
+  },
+  (error) => {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
     return Promise.reject(error);
   }
 );
