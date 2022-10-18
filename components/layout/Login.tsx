@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { login } from '../../services/login';
 
 const Login = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -15,6 +17,11 @@ const Login = () => {
     console.log(formData);
     const [response, error] = await login(formData);
     console.log(response, error);
+    if (!error) {
+      router.push('/');
+    } else {
+      alert(error);
+    }
   };
   return (
     <div className="flex flex-col items-center">
