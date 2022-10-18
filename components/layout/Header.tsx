@@ -1,5 +1,6 @@
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
+import LanguageToggler from '../ui/LanguageToggler';
 import Logo from '../ui/Logo';
 import ThemeToggler from '../ui/ThemeToggler';
 
@@ -23,6 +24,7 @@ const Header = () => {
         <Logo />
         <div className="flex gap-12">
           <ThemeToggler></ThemeToggler>
+          <LanguageToggler />
           <button className="btn">
             <Link href="/LoginPage">Login</Link>
           </button>
