@@ -1,6 +1,9 @@
+import { signIn } from "next-auth/react";
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { login } from '../../services/login';
+import styles from '../../styles/Login.module.css';
 
 const Login = () => {
   const router = useRouter();
@@ -8,21 +11,35 @@ const Login = () => {
     username: '',
     password: '',
   });
+
   const handleChange = (e: any) => {
     const name = e.target.name;
     const value = e.target.value;
     setFormData({ ...formData, [name]: value });
   };
+
   const Submit = async () => {
-    console.log(formData);
     const [response, error] = await login(formData);
-    console.log(response, error);
     if (!error) {
       router.push('/');
     } else {
       alert(error);
     }
   };
+
+
+  // Google Handler function
+  async function handleGoogleSignin(e: any) {
+    e.preventDefault()
+    signIn('google', { callbackUrl: "http://localhost:3000" })
+  }
+
+  // Facebook Login 
+  async function handleFacebookSignin(e: any) {
+    e.preventDefault()
+    signIn('facebook', { callbackUrl: "http://localhost:3000" })
+  }
+
   return (
     <div className="flex flex-col items-center">
       <div className="w-1/4 text-center text-5xl font-thin my-4 text-indigo-500">
@@ -47,6 +64,16 @@ const Login = () => {
       <button className="btn" onClick={Submit}>
         Login
       </button>
+      <div>
+        <button type='button' onClick={handleGoogleSignin}>
+          Sign In with Google <Image src={'/assets/google.svg'} width={25} height={20} ></Image>
+        </button>
+      </div>
+      <div>
+        <button type='button' onClick={handleFacebookSignin}>
+          Sign In with Facebook <Image src={'/assets/facebook.svg'} width={25} height={25} className={styles.facebookLogo}></Image>
+        </button>
+      </div>
     </div>
   );
 };

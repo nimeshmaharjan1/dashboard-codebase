@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import Logo from '../ui/Logo';
 import ThemeToggler from '../ui/ThemeToggler';
@@ -7,12 +7,7 @@ import ThemeToggler from '../ui/ThemeToggler';
 const Header = () => {
   const { data: session } = useSession();
 
-  const handleSignin = (e) => {
-    e.preventDefault()
-    signIn()
-  }
-
-  const handleSignout = (e) => {
+  const handleSignout = (e: any) => {
     e.preventDefault()
     signOut()
   }
@@ -24,11 +19,11 @@ const Header = () => {
         <div className="flex gap-12">
           <ThemeToggler></ThemeToggler>
           <button className="btn">
-            <Link href="/LoginPage">Login</Link>
-          </button>
-          <button className="btn">
-            {session && <a href="#" onClick={handleSignout} className="btn-signin">Social Sign out</a>}
-            {!session && <a href="#" onClick={handleSignin} className="btn-signin">Social Sign in</a>}
+            {session &&
+              <Link href="/">
+                <a onClick={handleSignout} className="btn-signin">Logout</a></Link>}
+            {!session &&
+              <Link href="/LoginPage">Login</Link>}
           </button>
         </div>
       </div>
