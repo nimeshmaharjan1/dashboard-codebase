@@ -4,19 +4,18 @@ import LanguageToggler from '../ui/LanguageToggler';
 import Logo from '../ui/Logo';
 import ThemeToggler from '../ui/ThemeToggler';
 
-
 const Header = () => {
   const { data: session } = useSession();
 
   const handleSignin = (e) => {
-    e.preventDefault()
-    signIn()
-  }
+    e.preventDefault();
+    signIn();
+  };
 
   const handleSignout = (e) => {
-    e.preventDefault()
-    signOut()
-  }
+    e.preventDefault();
+    signOut();
+  };
 
   return (
     <header className="wrapper | h-15 shadow-md dark:border-gray-700 dark:shadow-gray-900">
@@ -26,11 +25,19 @@ const Header = () => {
           <ThemeToggler></ThemeToggler>
           <LanguageToggler />
           <button className="btn">
-            <Link href="/LoginPage">Login</Link>
+            <Link href="/loginpage">Login</Link>
           </button>
           <button className="btn">
-            {session && <a href="#" onClick={handleSignout} className="btn-signin">Social Sign out</a>}
-            {!session && <a href="#" onClick={handleSignin} className="btn-signin">Social Sign in</a>}
+            {session && (
+              <a href="#" onClick={handleSignout} className="btn-signin">
+                Social Sign out
+              </a>
+            )}
+            {!session && (
+              <a href="#" onClick={handleSignin} className="btn-signin">
+                Social Sign in
+              </a>
+            )}
           </button>
         </div>
       </div>

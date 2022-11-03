@@ -16,7 +16,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/anek-telugu": "^4.5.4",
     "@heroicons/react": "^2.0.10",
+    "@stitches/react": "^1.2.8",
+    "lodash.get": "^4.4.2",
     "next": "12.2.5",
     "next-auth": "^4.14.0",
     "next-themes": "^0.2.1",
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/lodash.get": "^4.4.7",
     "@types/node": "18.7.15",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",

@@ -13,7 +13,7 @@ const LanguageToggler = () => {
   useEffect(() => {
     setIsMounted(true);
     setSelected(router.locale);
-  }, []);
+  }, [router.locale]);
   if (!isMounted) return null;
 
   const handleChange = (event: any) => {
