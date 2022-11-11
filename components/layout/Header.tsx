@@ -1,11 +1,23 @@
+import { isEmpty } from 'lodash';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import styles from '../../styles/Home.module.css';
+import { clearLocalStorage, getAuthToken } from '../../utils/localStorage.util';
 import LanguageToggler from '../ui/LanguageToggler';
 import Logo from '../ui/Logo';
 import ThemeToggler from '../ui/ThemeToggler';
 
 const Header = () => {
   const { data: session } = useSession();
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoggedIn(!isEmpty(getAuthToken()));
+  }, []);
 
   const handleSignin = (e) => {
     e.preventDefault();
@@ -24,21 +36,41 @@ const Header = () => {
         <div className="flex gap-12">
           <ThemeToggler></ThemeToggler>
           <LanguageToggler />
-          <button className="btn">
-            <Link href="/loginpage">Login</Link>
-          </button>
-          <button className="btn">
-            {session && (
-              <a href="#" onClick={handleSignout} className="btn-signin">
-                Social Sign out
-              </a>
-            )}
-            {!session && (
+          {!session && !isLoggedIn && router.pathname !== '/loginpage' ? (
+            <button className="btn">
+              <Link href="/loginpage">Login</Link>
+            </button>
+          ) : (
+            ''
+          )}
+          {!session && !isLoggedIn && (
+            <button className="btn">
               <a href="#" onClick={handleSignin} className="btn-signin">
                 Social Sign in
               </a>
-            )}
-          </button>
+            </button>
+          )}
+          {!isLoggedIn && session && (
+            <>
+              <button className="btn">
+                <a href="#" onClick={handleSignout} className="btn-signin">
+                  Social Sign out
+                </a>
+              </button>
+              <Image
+                src={session?.user?.image}
+                height={50}
+                width={50}
+                alt=""
+                className={styles.avatar}
+              />
+            </>
+          )}
+          {isLoggedIn && (
+            <button className="btn" onClick={() => clearLocalStorage()}>
+              <Link href="/loginpage">Logout</Link>
+            </button>
+          )}
         </div>
       </div>
     </header>
