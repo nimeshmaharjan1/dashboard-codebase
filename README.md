@@ -29,7 +29,7 @@ Then on your JS file you can access it as such:
 ```bash
 import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
-publicRuntimeConfig.DB_URL;
+publicRuntimeConfig.testenv_var;
 ```
 
 Finally, add that variable into your .env.local file and restart the server.
