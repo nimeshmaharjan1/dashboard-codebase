@@ -22,6 +22,7 @@ Add publicRuntimeConfig in your next.config.js:
  publicRuntimeConfig: {
    testenv_var: process.env.testenv_var
  }
+```
 
 Then on your JS file you can access it as such:
 
@@ -29,5 +30,6 @@ Then on your JS file you can access it as such:
 import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 publicRuntimeConfig.DB_URL;
+```
 
 Finally, add that variable into your .env.local file and restart the server.
