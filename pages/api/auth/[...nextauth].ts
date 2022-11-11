@@ -2,7 +2,6 @@ import NextAuth from 'next-auth';
 import FacebookProvider from 'next-auth/providers/facebook';
 import GoogleProvider from 'next-auth/providers/google';
 
-
 const options = {
   providers: [
     GoogleProvider({

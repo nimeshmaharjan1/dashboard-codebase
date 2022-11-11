@@ -4,6 +4,11 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { login } from '../../services/login';
 import styles from '../../styles/Login.module.css';
+import { addAuthToLocalStorage } from '../../utils/localStorage.util';
+import getConfig from 'next/config';
+
+
+const { publicRuntimeConfig } = getConfig();
 
 const Login = () => {
   const router = useRouter();
@@ -21,6 +26,10 @@ const Login = () => {
   const Submit = async () => {
     const [response, error] = await login(formData);
     if (!error) {
+      addAuthToLocalStorage(
+        response?.data.access_token,
+        response?.data.refresh_token
+      );
       router.push('/');
     } else {
       alert(error);
@@ -30,14 +39,14 @@ const Login = () => {
 
   // Google Handler function
   async function handleGoogleSignin(e: any) {
-    e.preventDefault()
-    signIn('google', { callbackUrl: "http://localhost:3000" })
+    e.preventDefault();
+    signIn('google', { callbackUrl: publicRuntimeConfig.CALLBACK_URL })
   }
 
   // Facebook Login 
   async function handleFacebookSignin(e: any) {
     e.preventDefault()
-    signIn('facebook', { callbackUrl: "http://localhost:3000" })
+    signIn('facebook', { callbackUrl: publicRuntimeConfig.CALLBACK_URL })
   }
 
   return (
@@ -55,7 +64,7 @@ const Login = () => {
       />
       <input
         className="w-1/4 my-4 border-solid border-2 border-indigo-500 leading-loose tracking-wide p-2 rounded-md"
-        type="text"
+        type="password"
         placeholder="Enter your password"
         name="password"
         value={formData.password}

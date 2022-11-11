@@ -1,6 +1,6 @@
 import Login from '../components/layout/Login';
 import Page from '../components/layout/Page';
-const LoginPage = () => {
+const loginpage = () => {
   return (
     <Page title="Login" description="this is for login page">
       <Login />
@@ -8,4 +8,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default loginpage;
