@@ -16,3 +16,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Setting environment variable for client side
 
+Add publicRuntimeConfig in your next.config.js:
+
+```bash
+ publicRuntimeConfig: {
+   testenv_var: process.env.testenv_var
+ }
