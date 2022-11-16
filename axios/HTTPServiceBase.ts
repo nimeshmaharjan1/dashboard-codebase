@@ -50,7 +50,6 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   async (response) => {
     const data = await response.data;
-    console.log('this is data', data.access_token);
     setLocalStorage(data);
     return response;
   },

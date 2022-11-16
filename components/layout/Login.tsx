@@ -1,12 +1,11 @@
-import { signIn } from "next-auth/react";
+import { signIn } from 'next-auth/react';
+import getConfig from 'next/config';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { login } from '../../services/login';
 import styles from '../../styles/Login.module.css';
 import { addAuthToLocalStorage } from '../../utils/localStorage.util';
-import getConfig from 'next/config';
-
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -16,6 +15,7 @@ const Login = () => {
     username: '',
     password: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: any) => {
     const name = e.target.name;
@@ -24,6 +24,7 @@ const Login = () => {
   };
 
   const Submit = async () => {
+    setLoading(true);
     const [response, error] = await login(formData);
     if (!error) {
       addAuthToLocalStorage(
@@ -31,22 +32,23 @@ const Login = () => {
         response?.data.refresh_token
       );
       router.push('/');
+      setLoading(false);
     } else {
       alert(error);
+      setLoading(false);
     }
   };
-
 
   // Google Handler function
   async function handleGoogleSignin(e: any) {
     e.preventDefault();
-    signIn('google', { callbackUrl: publicRuntimeConfig.CALLBACK_URL })
+    signIn('google', { callbackUrl: publicRuntimeConfig.CALLBACK_URL });
   }
 
-  // Facebook Login 
+  // Facebook Login
   async function handleFacebookSignin(e: any) {
-    e.preventDefault()
-    signIn('facebook', { callbackUrl: publicRuntimeConfig.CALLBACK_URL })
+    e.preventDefault();
+    signIn('facebook', { callbackUrl: publicRuntimeConfig.CALLBACK_URL });
   }
 
   return (
@@ -70,17 +72,28 @@ const Login = () => {
         value={formData.password}
         onChange={handleChange}
       />
-      <button className="btn" onClick={Submit}>
+      <button
+        className={`btn ${loading ? 'animate-ping' : ''}`}
+        disabled={loading}
+        onClick={Submit}
+      >
         Login
       </button>
       <div>
-        <button type='button' onClick={handleGoogleSignin}>
-          Sign In with Google <Image src={'/assets/google.svg'} width={25} height={20} ></Image>
+        <button type="button" onClick={handleGoogleSignin}>
+          Sign In with Google{' '}
+          <Image src={'/assets/google.svg'} width={25} height={20}></Image>
         </button>
       </div>
       <div>
-        <button type='button' onClick={handleFacebookSignin}>
-          Sign In with Facebook <Image src={'/assets/facebook.svg'} width={25} height={25} className={styles.facebookLogo}></Image>
+        <button type="button" onClick={handleFacebookSignin}>
+          Sign In with Facebook{' '}
+          <Image
+            src={'/assets/facebook.svg'}
+            width={25}
+            height={25}
+            className={styles.facebookLogo}
+          ></Image>
         </button>
       </div>
     </div>

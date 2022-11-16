@@ -1,14 +1,20 @@
-import Login from '../components/layout/Login';
+import { isEmpty } from 'lodash';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { getAuthToken } from '../utils/localStorage.util';
 
 const withAuth = (Component: any) => {
   const Auth = (props: any) => {
     // Login data added to props via redux-store (or use react context for example)
-    const { isLoggedIn } = props;
+    const { data: session } = useSession();
+    const router = useRouter();
 
-    // If user is not logged in, return login component
-    if (!isLoggedIn) {
-      return <Login />;
-    }
+    useEffect(() => {
+      if (isEmpty(getAuthToken()) && !session) {
+        router.push('/loginpage');
+      }
+    }, []);
 
     // If user is logged in, return original component
     return <Component {...props} />;

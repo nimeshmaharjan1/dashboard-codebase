@@ -1,5 +1,6 @@
 import { isEmpty } from 'lodash';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import getConfig from 'next/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,33 +10,39 @@ import { clearLocalStorage, getAuthToken } from '../../utils/localStorage.util';
 import LanguageToggler from '../ui/LanguageToggler';
 import Logo from '../ui/Logo';
 import ThemeToggler from '../ui/ThemeToggler';
-import getConfig from 'next/config';
-
 
 const { publicRuntimeConfig } = getConfig();
 
 const Header = () => {
   const { data: session } = useSession();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
   useEffect(() => {
     setIsLoggedIn(!isEmpty(getAuthToken()));
   }, []);
 
-
-  const handleSignin = (e) => {
+  const handleSignin = (e: any) => {
     e.preventDefault();
     signIn();
   };
 
-  const handleSignout = (e) => {
+  const handleSignout = (e: any) => {
+    setLoading(true);
     e.preventDefault();
-    signOut({callbackUrl: `${publicRuntimeConfig.CALLBACK_URL}/loginpage`});
+    signOut({ callbackUrl: `${publicRuntimeConfig.CALLBACK_URL}/loginpage` });
+    setLoading(false);
+  };
+
+  const handleUserLogout = () => {
+    setLoading(true);
+    clearLocalStorage();
+    setLoading(false);
   };
 
   return (
-    <header className="wrapper | h-15 shadow-md dark:border-gray-700 dark:shadow-gray-900"> 
+    <header className="wrapper | h-15 shadow-md dark:border-gray-700 dark:shadow-gray-900">
       <div className="px-4 container mx-auto sm:px-6 py-4 flex justify-between items-center">
         <Logo />
         <div className="flex gap-12">
@@ -51,10 +58,11 @@ const Header = () => {
 
           {!isLoggedIn && session && (
             <>
-              <button className="btn">
-                <a href="#" onClick={handleSignout} className="btn-signin">
-                  Logout
-                </a>
+              <button
+                className={`btn ${loading ? 'animate-ping' : ''}`}
+                onClick={handleSignout}
+              >
+                Logout
               </button>
               <Image
                 src={session?.user?.image}
@@ -66,7 +74,10 @@ const Header = () => {
             </>
           )}
           {isLoggedIn && (
-            <button className="btn" onClick={() => clearLocalStorage()}>
+            <button
+              className={`btn ${loading ? 'animate-ping' : ''}`}
+              onClick={() => handleUserLogout()}
+            >
               <Link href="/loginpage">Logout</Link>
             </button>
           )}

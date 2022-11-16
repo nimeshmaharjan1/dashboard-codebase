@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import Page from '../components/layout/Page';
 import { IColumnType, Table } from '../components/ui/Table';
+import withAuth from '../hoc/withAuth';
 import { getAuthToken } from '../utils/localStorage.util';
 
 const Home: NextPage = () => {
@@ -106,4 +107,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default Home;
+export default withAuth(Home);
