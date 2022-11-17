@@ -1,11 +1,12 @@
 import { signIn } from "next-auth/react";
+import getConfig from 'next/config';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { login } from '../../services/login';
+import Banner from "../../stories/Banner.tsx";
 import styles from '../../styles/Login.module.css';
 import { addAuthToLocalStorage } from '../../utils/localStorage.util';
-import getConfig from 'next/config';
 
 
 const { publicRuntimeConfig } = getConfig();
@@ -51,6 +52,9 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center">
+      <Banner variant="info">
+        <p>This is an example of how we can use our components from Storybook in a NextJS application. JSX components that are defined in Storybook can be imported/exported like regular JSX components. If you need to import components from Storybook in external applications then you should explore publishing a NPM package that contains the relevant components.</p>
+      </Banner>
       <div className="w-1/4 text-center text-5xl font-thin my-4 text-indigo-500">
         LOGIN
       </div>
@@ -82,6 +86,7 @@ const Login = () => {
         <button type='button' onClick={handleFacebookSignin}>
           Sign In with Facebook <Image src={'/assets/facebook.svg'} width={25} height={25} className={styles.facebookLogo}></Image>
         </button>
+
       </div>
     </div>
   );
