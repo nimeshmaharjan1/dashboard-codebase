@@ -79,6 +79,15 @@ const Login = () => {
       >
         Login
       </button>
+      <br />
+      <button
+        className={`btn`}
+        disabled={loading}
+        onClick={() => router.push('/registerpage')}
+      >
+        Create Account
+      </button>
+      <br />
       <div>
         <button type="button" onClick={handleGoogleSignin}>
           Sign In with Google{' '}
