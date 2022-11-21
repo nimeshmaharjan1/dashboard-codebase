@@ -18,6 +18,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Installing Story Book(if needed)
+
+```bash
+
+npx sb inti
+
 ## Setting environment variable for client side
 
 Add publicRuntimeConfig in your next.config.js:
