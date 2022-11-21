@@ -48,3 +48,15 @@ publicRuntimeConfig.testenv_var;
 ```
 
 Finally, add that variable into your .env.local file and restart the server.
+
+## Merge request/ Pull request steps that the requester should follow
+
+```bash
+1. The title should be in the format 
+   <work-item-id>-<work-item-type>: title of the work item
+   For Example: 1875-feature: Edit summary page
+2. The description should describe the work in that pull request with proper context
+3. The people assigned to review the code should be added as reviewers.
+4. The work item to which the current pull request is associated should be included.
+
+```
