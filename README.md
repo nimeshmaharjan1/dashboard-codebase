@@ -22,7 +22,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ```bash
 
-npx sb inti
+npx sb init 
+npm run storybook
+# or
+yarn run storybook
 
 ## Setting environment variable for client side
 
