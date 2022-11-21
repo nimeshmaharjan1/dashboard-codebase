@@ -27,6 +27,8 @@ npm run storybook
 # or
 yarn run storybook
 
+```
+
 ## Setting environment variable for client side
 
 Add publicRuntimeConfig in your next.config.js:
