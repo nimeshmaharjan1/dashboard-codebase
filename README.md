@@ -5,7 +5,7 @@
 First, run the development server:
 
 ```bash
-npm istall
+npm install
 # or 
 yarn install
 
