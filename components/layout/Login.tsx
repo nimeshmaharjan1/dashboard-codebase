@@ -1,4 +1,4 @@
-import { signIn } from 'next-auth/react';
+import { signIn } from "next-auth/react";
 import getConfig from 'next/config';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -53,6 +53,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center">
+
       <div className="w-1/4 text-center text-5xl font-thin my-4 text-indigo-500">
         LOGIN
       </div>
@@ -104,6 +105,7 @@ const Login = () => {
             className={styles.facebookLogo}
           ></Image>
         </button>
+
       </div>
     </div>
   );

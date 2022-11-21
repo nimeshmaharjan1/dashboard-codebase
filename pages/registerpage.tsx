@@ -4,7 +4,7 @@ import { Field, Form } from 'react-final-form';
 import Page from '../components/layout/Page';
 import { isUserLoggedIn } from '../utils/auth.util';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   useEffect(() => {
     if (isUserLoggedIn()) {
       Router.push('/');
@@ -133,4 +133,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

@@ -11,10 +11,10 @@ const withAuth = (Component: any) => {
     const router = useRouter();
 
     useEffect(() => {
-      if (isEmpty(getAuthToken()) && !session) {
+      if (isEmpty(getAuthToken()) && session && session === undefined) {
         router.push('/loginpage');
       }
-    }, []);
+    }, [session]);
 
     // If user is logged in, return original component
     return <Component {...props} />;
