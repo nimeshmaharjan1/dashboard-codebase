@@ -1,6 +1,10 @@
 import axios, { AxiosInstance } from 'axios';
+import getConfig from 'next/config';
 
-const baseURL = 'https://dev.publicapi-hgie2e.ekbana.net';
+const { publicRuntimeConfig } = getConfig();
+
+
+const baseURL = publicRuntimeConfig.BASE_URL;
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: baseURL,
@@ -36,7 +40,7 @@ axiosInstance.interceptors.request.use(
     const originalRequest = error.config;
     if (error?.response?.status === 401) {
       clearLocalStorage();
-      window.location.href = '/login';
+      window.location.href = '/loginpage';
       return Promise.reject(error);
     }
     if (error.response.status === 306 && !originalRequest._retry) {

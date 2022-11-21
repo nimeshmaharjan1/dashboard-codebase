@@ -15,8 +15,9 @@ const nextConfig = {
     domains: ['lh3.googleusercontent.com']
   },
   publicRuntimeConfig: {
-   CALLBACK_URL: process.env.CALLBACK_URL
- }
+    CALLBACK_URL: process.env.CALLBACK_URL,
+    BASE_URL: process.env.BASE_URL
+  }
 };
 
 module.exports = nextConfig;
