@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import getConfig from 'next/config';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,11 +22,6 @@ const Header = () => {
   useEffect(() => {
     setIsLoggedIn(!isEmpty(getAuthToken()));
   }, []);
-
-  const handleSignin = (e: any) => {
-    e.preventDefault();
-    signIn();
-  };
 
   const handleSignout = (e: any) => {
     setLoading(true);

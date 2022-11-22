@@ -14,6 +14,7 @@ import { getAuthToken } from '../utils/localStorage.util';
 const Home: NextPage = () => {
   const { t } = useTranslation('common');
   const { data: session } = useSession();
+  console.log(session)
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   interface IData {
     fullName: string;

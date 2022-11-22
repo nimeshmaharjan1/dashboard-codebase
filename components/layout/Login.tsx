@@ -112,18 +112,17 @@ const Login = () => {
         </button>
 
       </div>
-      <div>
+      {/* <div>
         <button type="button" onClick={handleGitHubSignin}>
           Sign In with GIThub{' '}
           <Image
-            src={'/assets/facebook.svg'}
+            src={'/assets/github.svg'}
             width={25}
             height={25}
             className={styles.facebookLogo}
           ></Image>
         </button>
-
-      </div>
+      </div> */}
     </div>
   );
 };
