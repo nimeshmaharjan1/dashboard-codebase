@@ -51,6 +51,11 @@ const Login = () => {
     signIn('facebook', { callbackUrl: publicRuntimeConfig.CALLBACK_URL });
   }
 
+  async function handleGitHubSignin(e: any) {
+    e.preventDefault();
+    signIn('github', { callbackUrl: publicRuntimeConfig.CALLBACK_URL });
+  }
+
   return (
     <div className="flex flex-col items-center">
 
@@ -98,6 +103,18 @@ const Login = () => {
       <div>
         <button type="button" onClick={handleFacebookSignin}>
           Sign In with Facebook{' '}
+          <Image
+            src={'/assets/facebook.svg'}
+            width={25}
+            height={25}
+            className={styles.facebookLogo}
+          ></Image>
+        </button>
+
+      </div>
+      <div>
+        <button type="button" onClick={handleGitHubSignin}>
+          Sign In with GIThub{' '}
           <Image
             src={'/assets/facebook.svg'}
             width={25}

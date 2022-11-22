@@ -1,6 +1,8 @@
 import NextAuth from 'next-auth';
 import FacebookProvider from 'next-auth/providers/facebook';
+import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
+
 
 const options = {
   providers: [
@@ -11,6 +13,10 @@ const options = {
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUBID,
+      clientSecret: process.env.GITHUB_SECRET
     })
   ],
 }
