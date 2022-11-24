@@ -1,5 +1,4 @@
-import Footer from '@features/docs/components/layout/main/footer';
-import Header from '@features/docs/components/layout/main/header';
+import Sidebar from '@features/docs/components/layout/main/sidebar';
 import Head from 'next/head';
 import React from 'react';
 
@@ -18,9 +17,7 @@ const DocumentationLayout: React.FC<Props> = ({ children }) => {
         className="d-flex flex-column justify-content-between"
         style={{ minHeight: '100vh' }}
       >
-        <Header></Header>
-        <main className="container">{children}</main>
-        <Footer></Footer>
+        <Sidebar {...{ children }}></Sidebar>
       </div>
     </>
   );
