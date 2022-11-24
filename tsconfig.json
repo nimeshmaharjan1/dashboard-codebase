@@ -6,7 +6,8 @@
       "@features/*": ["features/*"],
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"],
-      "@store/*": ["store/*"]
+      "@store/*": ["store/*"],
+      "@styles/*": ["styles/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
