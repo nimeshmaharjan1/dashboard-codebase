@@ -22,13 +22,13 @@ $danger: #ef4444 !default;
 $light: $white !default;
 $dark: $gray-900 !default;
 
-$theme-colors:(
-    'primary' : $primary,
-    'secondary': $secondary,
-    'success': $success,
-    'info' :$info,
-    'warning': $warning,
-    'danger' : $danger,
-    'light' : $light,
-    'dark': $dark
-)!default;
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+) !default;

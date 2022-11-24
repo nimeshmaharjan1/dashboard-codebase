@@ -1,19 +1,33 @@
-import { SessionProvider } from "next-auth/react";
+import { NextPage } from 'next';
+import { Session } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import '../styles/sass/styles.scss';
 
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: React.ReactElement) => React.ReactNode;
+};
 
-function MyApp({ Component, pageProps }: AppProps) {
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+  pageProps: { session?: Session };
+};
+
+function BaseCode({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <SessionProvider session={pageProps.session}>
-        <Component {...pageProps} />
+      <SessionProvider {...{ session }}>
+        {getLayout(<Component {...pageProps} />)}
       </SessionProvider>
     </ThemeProvider>
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(BaseCode);
