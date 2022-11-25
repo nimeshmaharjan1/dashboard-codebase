@@ -1,0 +1,13 @@
+//Import variables file to use the predefined variables from the variables scss
+
+@import '../../../../../../styles/sass/abstract/variables';
+
+//Naming convention used is snake_case such as custom_name
+
+.custom_header_title {
+  color: $success;
+}
+
+.custom_paragraph {
+  color: $primary;
+}
