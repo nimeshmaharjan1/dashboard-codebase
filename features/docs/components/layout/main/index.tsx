@@ -1,6 +1,7 @@
 import Sidebar from '@features/docs/components/layout/main/sidebar';
 import Head from 'next/head';
 import React from 'react';
+import Header from './header';
 
 type Props = {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ const DocumentationLayout: React.FC<Props> = ({ children }) => {
         className="d-flex flex-column justify-content-between"
         style={{ minHeight: '100vh' }}
       >
+        <Header></Header>
         <Sidebar {...{ children }}></Sidebar>
       </div>
     </>
