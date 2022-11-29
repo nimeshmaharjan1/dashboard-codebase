@@ -1,25 +1,18 @@
-import { GetServerSideProps } from 'next';
+import CmsLayout from '@features/home/components/layout/main';
+import { NextPageWithLayout } from '@pages/_app';
+import React from 'react';
 
-const Index = () => {
+const Dashboard: NextPageWithLayout = () => {
   return (
-    <section
-      style={{ minHeight: '100vh' }}
-      className="d-flex flex-column justify-content-center align-items-center gap-3 bg-dark"
-    >
-      <button className="btn btn-primary btn-lg btn-block">Docs</button>
-      <button className="btn btn-secondary btn-lg btn-block">CMS</button>
-    </section>
+    <div>
+      <p>Dashboard</p>
+      <button className="btn btn-secondary">Dashboard</button>
+    </div>
   );
 };
 
-export default Index;
+export default Dashboard;
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    redirect: {
-      permanent: true,
-      destination: '/cms',
-    },
-    props: {},
-  };
+Dashboard.getLayout = (page: React.ReactElement) => {
+  return <CmsLayout>{page}</CmsLayout>;
 };

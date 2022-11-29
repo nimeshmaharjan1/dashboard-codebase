@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Footer from '@features/cms/components/layout/main/footer';
-import Header from '@features/cms/components/layout/main/header';
-import Sidebar from '@features/cms/components/layout/main/sidebar';
+import Footer from '@features/home/components/layout/main/footer';
+import Header from '@features/home/components/layout/main/header';
+import Sidebar from '@features/home/components/layout/main/sidebar';
 import Head from 'next/head';
 
 export type Props = {
@@ -13,7 +13,7 @@ const CmsLayout: React.FC<Props> = ({ children }) => {
   return (
     <div className="bg-dark text-white min-vh-100">
       <Head>
-        <title>CMS - Code Base</title>
+        <title>Home</title>
       </Head>
       <header>
         <Header></Header>
