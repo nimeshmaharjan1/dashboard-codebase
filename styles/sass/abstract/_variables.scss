@@ -1,79 +1,82 @@
+// Required
 @import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/mixins';
-//Variables goes here
 
+// Default variable overrides
+//Variables goes here
 $white: #fff !default;
-$gray-100: #f3f6ff !default;
-$gray-200: #eff2fc !default;
-$gray-300: #e2e5f1 !default;
-$gray-400: #d4d7e5 !default;
-$gray-500: #b4b7c9 !default;
-$gray-600: #9397ad !default;
-$gray-700: #585c7b !default;
-$gray-800: #3e4265 !default;
-$gray-900: #131022 !default;
-$black: #000 !default;
+$black: #000;
 
 //fonts
 $font-family-base: 'Inter', sans-serif;
 
 //Brand Colors
-$primary: #800 !default;
-$secondary: $gray-200 !default;
-$info: #4c82f7 !default;
-$success: #22c55e !default;
-$warning: #ffba08 !default;
-$danger: #ef4444 !default;
-$light: $white !default;
-$dark: $gray-900 !default;
+$primary: #800;
+$secondary: #9fc2f0;
+$info: #4c82f7;
+$success: #22c55e;
+$warning: #ffba08;
+$danger: #ef4444;
+$light: $white;
+$dark: #111;
 
 // Prefix for :root CSS variables
-
-$variable-prefix: ek-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$variable-prefix: ek-;
 $prefix: $variable-prefix;
 
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': $light,
-  'dark': $dark,
-) !default;
+// Required
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/mixins';
 
+////Variables for theme goes here
 :root.dark {
   /* redefine theme colors for dark theme */
-  $primary: #012345;
-  $secondary: #111111;
-  $success: #222222;
-  $dark: #000;
-  $body-color: #eeeeee;
-  $body-bg: #263c5c;
-
-  --#{$variable-prefix}body-color: #{$body-color};
-  --#{$variable-prefix}body-bg: #{$body-bg};
+  $primary: #335eec;
+  $secondary: #b902b9;
+  $success: #008817;
+  $warning: #b98500 !default;
+  $danger: #b90000 !default;
+  $dark: $black;
+  $light: $white;
+  $body-color: #d4d4d4;
+  $body-bg: #121519;
 
   $theme-colors: (
     'primary': $primary,
     'secondary': $secondary,
     'success': $success,
-    'danger': $danger,
     'info': $info,
+    'warning': $warning,
+    'danger': $danger,
     'dark': $dark,
     'light': $light,
+    'body-color': $body-color,
+    'body-bg': $body-bg,
   );
+  --#{$variable-prefix}body-color: #{$body-color};
+  --#{$variable-prefix}body-bg: #{$body-bg};
 
   /* redefine theme color variables */
   @each $color, $value in $theme-colors {
     --#{$variable-prefix}#{$color}: #{$value};
+  }
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}bg-#{$color}: #{$value};
   }
 
   /* redefine theme color rgb vars (used for bg- colors) */
   $theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
   @each $color, $value in $theme-colors-rgb {
     --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    .btn-outline-#{$color} {
+      @include button-outline-variant($value);
+    }
   }
 }
