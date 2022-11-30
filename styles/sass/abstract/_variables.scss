@@ -1,3 +1,6 @@
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/mixins';
 //Variables goes here
 
 $white: #fff !default;
@@ -12,6 +15,9 @@ $gray-800: #3e4265 !default;
 $gray-900: #131022 !default;
 $black: #000 !default;
 
+//fonts
+$font-family-base: 'Inter', sans-serif;
+
 //Brand Colors
 $primary: #800 !default;
 $secondary: $gray-200 !default;
@@ -21,6 +27,11 @@ $warning: #ffba08 !default;
 $danger: #ef4444 !default;
 $light: $white !default;
 $dark: $gray-900 !default;
+
+// Prefix for :root CSS variables
+
+$variable-prefix: ek-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix;
 
 $theme-colors: (
   'primary': $primary,
@@ -32,3 +43,37 @@ $theme-colors: (
   'light': $light,
   'dark': $dark,
 ) !default;
+
+:root.dark {
+  /* redefine theme colors for dark theme */
+  $primary: #012345;
+  $secondary: #111111;
+  $success: #222222;
+  $dark: #000;
+  $body-color: #eeeeee;
+  $body-bg: #263c5c;
+
+  --#{$variable-prefix}body-color: #{$body-color};
+  --#{$variable-prefix}body-bg: #{$body-bg};
+
+  $theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'danger': $danger,
+    'info': $info,
+    'dark': $dark,
+    'light': $light,
+  );
+
+  /* redefine theme color variables */
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  /* redefine theme color rgb vars (used for bg- colors) */
+  $theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+  @each $color, $value in $theme-colors-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+}
