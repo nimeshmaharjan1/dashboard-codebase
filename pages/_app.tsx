@@ -21,6 +21,7 @@ function BaseCode({
   pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <SessionProvider {...{ session }}>

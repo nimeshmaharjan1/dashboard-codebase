@@ -10,14 +10,14 @@ $black: #000;
 $font-family-base: 'Inter', sans-serif;
 
 //Brand Colors
-$primary: #800;
-$secondary: #9fc2f0;
-$info: #4c82f7;
-$success: #22c55e;
-$warning: #ffba08;
-$danger: #ef4444;
+$primary: #4550e6;
+$secondary: #5d6778;
+$info: #5b99ea;
+$success: #5cb377;
+$warning: #eebf41;
+$danger: #d26d69;
 $light: $white;
-$dark: #111;
+$dark: #252930;
 
 // Prefix for :root CSS variables
 $variable-prefix: ek-;
@@ -28,7 +28,7 @@ $prefix: $variable-prefix;
 @import '../../../node_modules/bootstrap/scss/mixins';
 
 ////Variables for theme goes here
-:root.dark {
+:root.darken {
   /* redefine theme colors for dark theme */
   $primary: #335eec;
   $secondary: #b902b9;
