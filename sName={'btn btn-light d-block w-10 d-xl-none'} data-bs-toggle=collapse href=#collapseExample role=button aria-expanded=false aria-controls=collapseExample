@@ -1,0 +1,460 @@
+[33mcommit 627b6ce8f641766ae84c8ef4b6c5743cc96a043a[m[33m ([m[1;36mHEAD -> [m[1;32mheader[m[33m, [m[1;31morigin/header[m[33m, [m[1;32mexample-one[m[33m)[m
+Author: Binay Maharjan <binay.maharjan@ekbana.info>
+Date:   Wed Nov 30 16:37:01 2022 +0545
+
+    style: add sass for theme and spacing
+
+[33mcommit 19202f9cad1b52664f1533403bfa1709149b4685[m
+Author: Binay Maharjan <binay.maharjan@ekbana.info>
+Date:   Wed Nov 30 10:38:47 2022 +0545
+
+    style: add sass variable for dark mode
+
+[33mcommit 7530bb2de6777a12841fe804643466d01448791f[m
+Author: nimesh.maharjan <nimesh.maharjan@ekbana.info>
+Date:   Tue Nov 29 14:49:27 2022 +0545
+
+    chore: example one
+
+[33mcommit 7a1838a6f7c4eafe80eff828e8bfb8c1d4ac0f49[m[33m ([m[1;31morigin/folder-structure[m[33m)[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Fri Nov 25 11:06:40 2022 +0545
+
+    feat(cms): folder structure
+
+[33mcommit 48346d802d9bc2769c394ad11fc709136cd6cf64[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Fri Nov 25 10:47:45 2022 +0545
+
+    feat(cms): folder structure
+
+[33mcommit a22552ecfdc3a8449ee27823b90c509feaecaab2[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Thu Nov 24 12:31:30 2022 +0545
+
+    chore: folder structure change
+
+[33mcommit 183dd193232eafd9dcba807f92c09a8fe7d0f205[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Thu Nov 24 12:17:05 2022 +0545
+
+    chore: folder structure change
+
+[33mcommit 9b5c63abf519b8c71a4b65a3ddd1ddbc44218f79[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Thu Nov 24 11:37:12 2022 +0545
+
+    chore: folder structure change
+
+[33mcommit 01cdf295a32cff3152c7e0b4bbf5d3515391fba1[m
+Author: nimeshmaharjan1 <maharjannimesh11@gmail.com>
+Date:   Thu Nov 24 11:33:48 2022 +0545
+
+    chore: folder structure change
+
+[33mcommit 893a3134e7bb81e5308ba495d46ffc08b91d8b7b[m[33m ([m[1;31morigin/sass-structure[m[33m)[m
+Author: Sandeep Risal <sandeep.risal@ekbana.info>
+Date:   Thu Nov 24 10:24:49 2022 +0545
+
+    feat(sass-structure): setup sass structure
+
+[33mcommit d9ac446429698109adc4319f3d89336b172cbfb4[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Tue Nov 22 09:13:44 2022 +0545
+
+    fix: session auth fix ongoing
+
+[33mcommit 04ca7e8d77bff8d0984476265c11d10a717f30fc[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Tue Nov 22 08:25:59 2022 +0545
+
+    fix: stories path changed into folders
+
+[33mcommit 46b4848437af5cda6518ce294d6ed0fc3e3d54b5[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:20:41 2022 +0000
+
+    Update README.md
+
+[33mcommit 28a2cf1d891b71999bed2b651aa383b4987a6191[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:12:05 2022 +0000
+
+    Update README.md
+
+[33mcommit 76dd1737a1f6e856cb4e11f3dfe4e44da9a84919[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:11:44 2022 +0000
+
+    Update README.md
+
+[33mcommit 02e29c0542b1c941e5c245c64534254a61fba13f[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:10:36 2022 +0000
+
+    Update README.md
+
+[33mcommit 0f89a71f77113aea276f537f65140a7446a7a5d7[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:06:02 2022 +0000
+
+    Update README.md
+
+[33mcommit 28c65d2166d0ed3c1ccc7629bf0eb530a5f07aea[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Mon Nov 21 16:05:35 2022 +0000
+
+    Update README.md
+
+[33mcommit 750afc68430c58cd286c78cfec783f6d162e861c[m
+Merge: c330197 4bedbb9
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Mon Nov 21 21:36:11 2022 +0545
+
+    feat: storybook added and auth fix
+
+[33mcommit c33019771a559017e0a1fab2419974f346204c85[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Mon Nov 21 20:42:48 2022 +0545
+
+    fix: baseurl added in env
+
+[33mcommit d165b30a34a24698ae73af185aaa5837de7926ab[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Mon Nov 21 20:29:31 2022 +0545
+
+    feat: react final form added
+
+[33mcommit 4bedbb91a02aed6dc45c2fd4607033672eb490f9[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Thu Nov 17 15:42:22 2022 +0545
+
+    feat: a simple story added of banner and buttons
+
+[33mcommit d667e0faf480381771a14d101a7ba4cf5d6646ec[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Nov 16 09:56:16 2022 +0545
+
+    feat: hoc setup for protected routes
+
+[33mcommit fcaf43a2690bbbaabc307b5b49f82ea8d428c23f[m
+Merge: 82bf5fd 18239c3
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Fri Nov 11 16:29:56 2022 +0545
+
+    Merge branch 'master' of repo.ekbana.info:frontend-v2/next-basecode-ts
+
+[33mcommit 82bf5fd002bb93618081760044fe27a81e40a640[m
+Merge: 00d81fc e027974
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Fri Nov 11 16:29:42 2022 +0545
+
+    fix: added new environment variables and redirect issue on social logout fix
+
+[33mcommit 18239c33c8e537c17baf86443c6d65e41a00c600[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Fri Nov 11 10:34:08 2022 +0000
+
+    Update README.md
+
+[33mcommit 3678c5b20fd0af4e21401da8efddce3a6c19a6e9[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Fri Nov 11 10:33:38 2022 +0000
+
+    Update README.md
+
+[33mcommit 888744d8c2fc90e8f90b723e1759197e4be18d93[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Fri Nov 11 10:32:51 2022 +0000
+
+    Update README.md
+
+[33mcommit c27591cb0698b8fda18b30b72ea9a918068c6410[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Fri Nov 11 10:31:11 2022 +0000
+
+    Update README.md
+
+[33mcommit afaa2ac5f6ba9de6b161a3e02f5bdbcab4d68a5c[m
+Author: Ganesh Raj Manandhar <ganesh.manandhar@ekbana.info>
+Date:   Fri Nov 11 10:29:41 2022 +0000
+
+    Update README.md
+
+[33mcommit e02797412000771077d475213b1971f1cbb2e430[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Fri Nov 11 11:17:03 2022 +0545
+
+    feat: pushing latest code
+
+[33mcommit f95cbb007ad72aa2c5f5b33066efe6641072535a[m[33m ([m[1;31morigin/structure-fix[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mstructure-fix[m[33m)[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Thu Nov 3 12:41:18 2022 +0545
+
+    fix: table added and basic structure setup
+
+[33mcommit 00d81fcc65efd5c45249e18cff1d057fcd070e91[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Fri Oct 21 14:02:49 2022 +0545
+
+    feat: social login done and added some logos
+
+[33mcommit ef2509d4ca29e74b24fc7dc2c89316d9722e3870[m
+Merge: 9d38d68 458c948
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Oct 18 21:43:49 2022 +0545
+
+    Merge branch 'master' of repo.ekbana.info:frontend-v2/next-basecode-ts into structure-fix
+
+[33mcommit 458c948ce5a3e2da251b6dfb906dffd2b85e23e6[m
+Merge: 52800be 4c98ebd
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Oct 18 15:57:30 2022 +0000
+
+    Merge branch 'HTTPInterceptors' into 'master'
+    
+    Http interceptors
+    
+    See merge request frontend-v2/next-basecode-ts!10
+
+[33mcommit 4c98ebd5d9a782f401e79845c54438c2a7e3d4be[m
+Merge: 8b8ed68 33f021c
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Oct 18 21:40:55 2022 +0545
+
+    Merge branch 'HTTPInterceptors' of repo.ekbana.info:frontend-v2/next-basecode-ts into HTTPInterceptors
+
+[33mcommit 8b8ed68d472d7f03c9c36c0e6dc73b758d25741c[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Oct 18 21:39:40 2022 +0545
+
+    feat: language switch integrated on login
+
+[33mcommit 9d38d685b9eefeee826574c57d380c16b715907f[m
+Author: ek_mac_46 <ek_mac_46@Ganesh339.local>
+Date:   Tue Oct 18 13:23:36 2022 +0545
+
+    feat: social login ongoing
+
+[33mcommit 33f021c0dfbd895163541ab1fce1d9ce2742d0e6[m
+Author: bisheshxx <bishesh.tuladhar1@gmail.com>
+Date:   Tue Oct 18 12:30:27 2022 +0545
+
+    fix: redirect to homepage
+
+[33mcommit 49d12c9e9177f859758bdd6572a3f35e279f1ffd[m
+Author: bisheshxx <bishesh.tuladhar1@gmail.com>
+Date:   Tue Oct 18 12:28:13 2022 +0545
+
+    fix: changed response interceptor settings
+
+[33mcommit 20681f601713aeb5f5e1ba4461b294900ea6271d[m
+Author: bisheshxx <bishesh.tuladhar1@gmail.com>
+Date:   Tue Oct 18 11:03:04 2022 +0545
+
+    feat: added login button and re-route after login
+
+[33mcommit 3c54fd2c3ca3e097e0726970f8c4519cb9336053[m
+Author: bisheshxx <bishesh.tuladhar1@gmail.com>
+Date:   Mon Oct 17 14:54:10 2022 +0545
+
+    feat: implemented auth interceptors for login
+
+[33mcommit 52800be681930706ee6904d34f43e0f782f8d4d9[m
+Merge: fb3bb86 2c97ca1
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 04:52:49 2022 +0000
+
+    Merge branch 'i18n' into 'master'
+    
+    I18n
+    
+    See merge request frontend-v2/next-basecode-ts!9
+
+[33mcommit 2c97ca13d9f6386f644a87e6ce8f0361a701cb50[m
+Merge: 8210947 fb3bb86
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 10:36:51 2022 +0545
+
+    Merge branch 'master' of repo.ekbana.info:frontend-v2/next-basecode-ts into i18n
+
+[33mcommit fb3bb863c5e73d07a071fcc088d62a2d684afeb4[m
+Merge: 84a5fdd 92caa67
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 04:49:08 2022 +0000
+
+    Merge branch 'i18n' into 'master'
+    
+    I18n
+    
+    See merge request frontend-v2/next-basecode-ts!8
+
+[33mcommit 82109476ebaef022226cdeb2d829748427b65fbc[m
+Author: bishesh.tuladhar <bishesh.tuladhar@ekbana.info>
+Date:   Tue Sep 20 10:34:03 2022 +0545
+
+    fix: warning issue with i18n config file
+
+[33mcommit 92caa67a5479ad9ab6671c82c3dc928546ea50ef[m
+Merge: c40397b 84a5fdd
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 10:27:13 2022 +0545
+
+    fix: merge conflict resolved
+
+[33mcommit 84a5fdd1b0c6efb1e83c2fa4e5b3bf390db65871[m
+Merge: db215e5 5f40afa
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 04:36:17 2022 +0000
+
+    Merge branch 'tailwind-config' into 'master'
+    
+    Tailwind config
+    
+    See merge request frontend-v2/next-basecode-ts!7
+
+[33mcommit 5f40afa9f38baff98e795b31d7b83b7a35d6023e[m
+Merge: 3c5cd89 db215e5
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 10:19:30 2022 +0545
+
+    Merge branch 'master' of repo.ekbana.info:frontend-v2/next-basecode-ts into tailwind-config
+
+[33mcommit c40397b8ea8c73e89f751c08e79137230d9d0916[m
+Merge: 1c9f07c db215e5
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 09:42:10 2022 +0545
+
+    Merge branch 'master' of repo.ekbana.info:frontend-v2/next-basecode-ts into i18n
+
+[33mcommit db215e55f1b0ac2b1e7ebf7a3e2a4fe587482665[m
+Merge: 5cba8c6 f54011c
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 03:55:17 2022 +0000
+
+    Merge branch 'base-component' into 'master'
+    
+    feat: base structure for component
+    
+    See merge request frontend-v2/next-basecode-ts!6
+
+[33mcommit f54011ca5085ac8473a141eb1349da9c6b4aca20[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 20 09:39:08 2022 +0545
+
+    feat: base structure for component
+
+[33mcommit 1c9f07c927243e8ec8a5a3f23bcaf2e7413de3e2[m
+Author: bishesh.tuladhar <bishesh.tuladhar@ekbana.info>
+Date:   Mon Sep 12 16:36:11 2022 +0545
+
+    ci: intial configuration for i18next
+
+[33mcommit 3c5cd89c61417e99c16d295711d45e2bc593e02d[m
+Author: Nimesh Maharjan <nimesh.maharjan@ekbana.info>
+Date:   Fri Sep 9 18:17:48 2022 +0000
+
+    Update .gitignore
+
+[33mcommit 903f626d3cd37fc9729762ce96663b85d9bb1db9[m
+Author: nimesh.maharjan <nimesh.maharjan@ekbana.info>
+Date:   Fri Sep 9 23:58:55 2022 +0545
+
+    ci: initial tailwind along with theme switch
+
+[33mcommit 5cba8c6a2fc019a85a4624fcc4e87255900a512c[m
+Merge: 9bcad0a ea885be
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Fri Sep 9 03:35:27 2022 +0000
+
+    Merge branch 'editor-config' into 'master'
+    
+    build: implement vscode settings
+    
+    See merge request frontend-v2/next-basecode-ts!5
+
+[33mcommit ea885bef0f50b6a82e4839a2d6b47a90ee502848[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Fri Sep 9 09:18:56 2022 +0545
+
+    build: implement vscode settings
+
+[33mcommit 9bcad0a09989f7d17f5a80f5f7be0c78229d8da1[m
+Merge: 49dd76b abb61bd
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Fri Sep 9 03:10:58 2022 +0000
+
+    Merge branch 'commit-lint' into 'master'
+    
+    ci: commit lint implement
+    
+    See merge request frontend-v2/next-basecode-ts!4
+
+[33mcommit abb61bd70666d42165f24e38049d506e410f87f5[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Fri Sep 9 08:46:37 2022 +0545
+
+    ci: commit lint implement
+
+[33mcommit 49dd76b69a9e9327163f167f3c3ce401edec2e9f[m
+Merge: e274b1d 20b21f0
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 07:12:49 2022 +0000
+
+    Merge branch 'husky-master' into 'master'
+    
+    feat: husky implement
+    
+    See merge request frontend-v2/next-basecode-ts!3
+
+[33mcommit 20b21f0b11f549a2cfb61f63eb0759d146e73ee9[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 12:53:53 2022 +0545
+
+    feat: husky implement
+
+[33mcommit e274b1dec3ef021ebf2d93277401019e6b915c9b[m
+Merge: d18fde6 fb042de
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 06:42:24 2022 +0000
+
+    Merge branch 'es-lint' into 'master'
+    
+    feat: prettier implement, eslint configure
+    
+    See merge request frontend-v2/next-basecode-ts!2
+
+[33mcommit fb042de04cba3afcd0f620534c2c4c2ff37b995c[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 12:26:57 2022 +0545
+
+    feat: prettier implement, eslint configure
+
+[33mcommit d18fde66f3d22d225e8c137ed27b63dd8046593d[m
+Merge: 242dacb 6770b8b
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 06:18:18 2022 +0000
+
+    Merge branch 'engine-lock' into 'master'
+    
+    feat: engine locked to yarn, >1.22,node>14
+    
+    See merge request frontend-v2/next-basecode-ts!1
+
+[33mcommit 6770b8b3f794977de3c1630c25d6ffc1861d3cf9[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Wed Sep 7 12:01:32 2022 +0545
+
+    feat: engine locked to yarn, >1.22,node>14
+
+[33mcommit 242dacb045eb22f1c2ebd26b5578d888b5e51c51[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 6 17:56:32 2022 +0545
+
+    Readme update
+
+[33mcommit 926a91a886cc682ea853d16fc1ae2e634ea228c7[m
+Author: Birat Sapkota <birat.sapkota@ekbana.info>
+Date:   Tue Sep 6 17:54:17 2022 +0545
+
+    Initial commit

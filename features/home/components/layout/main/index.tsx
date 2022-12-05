@@ -11,7 +11,7 @@ export type Props = {
 
 const CmsLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="bg-dark text-white min-vh-100">
+    <div className="bg-light text-white min-vh-100">
       <Head>
         <title>Home</title>
       </Head>
