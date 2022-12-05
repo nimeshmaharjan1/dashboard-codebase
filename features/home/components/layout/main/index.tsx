@@ -10,7 +10,7 @@ export type Props = {
 
 const CmsLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="bg-light text-white min-vh-100">
+    <div className="">
       <Head>
         <title>Home</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

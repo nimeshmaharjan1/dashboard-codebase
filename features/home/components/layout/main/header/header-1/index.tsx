@@ -15,7 +15,10 @@ const HeaderOne = () => {
   const handleShow = () => setShow(true);
   //You can concatenate or just give one styles such as shown below
   return (
-    <Navbar className=" fixed-top py-3 shadow-sm" aria-label="Main navigation">
+    <Navbar
+      className=" fixed-top py-3 shadow-sm bg-white"
+      aria-label="Main navigation"
+    >
       <Container>
         <Navbar.Brand className="d-flex align-items-center me-auto" href="#">
           <Logo></Logo>

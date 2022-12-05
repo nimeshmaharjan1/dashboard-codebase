@@ -1,3 +1,4 @@
+import { NavDropdown } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 
 const NavItems = () => {
@@ -23,16 +24,12 @@ const NavItems = () => {
       <Nav.Link href="#" className="nav-link px-3">
         About
       </Nav.Link>
-      {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
+      <NavDropdown title="Link" id="navbarScrollingDropdown">
+        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+      </NavDropdown>
     </Nav>
   );
 };

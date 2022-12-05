@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className={`${styles.footer_wrapper} py-4 py-md-4`}>
-        <div className={`container-fluid py-4 py-md-5 px-4 px-md-3`}>
+        <div className="container-fluid py-4 py-md-5 px-4 px-md-3">
           <div className={`row`}>
             <div className={`col-lg-3 mb-3`}>
               <a
