@@ -5,7 +5,7 @@ const NavItems = () => {
   //You can concatenate or just give one styles such as shown below
   return (
     <Nav className="ms-auto">
-      <Nav.Link href="#" className="px-3">
+      <Nav.Link href="/" className="px-3">
         Home
       </Nav.Link>
 
@@ -21,7 +21,7 @@ const NavItems = () => {
         FAQs
       </Nav.Link>
 
-      <Nav.Link href="#" className="px-3">
+      <Nav.Link href="/about" className="px-3">
         About
       </Nav.Link>
       <NavDropdown title="Link" id="navbarScrollingDropdown" className="px-3">
