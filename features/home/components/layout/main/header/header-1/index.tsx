@@ -1,5 +1,5 @@
 //Import module scss as styles
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,10 +12,16 @@ const HeaderOne = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY > 200);
+    });
+  }, []);
   //You can concatenate or just give one styles such as shown below
   return (
     <Navbar
-      className=" fixed-top py-3 shadow-sm bg-white"
+      className={` ${scroll ? 'bg-navbar fixed-top shadow-sm' : ''}   py-3 `}
       aria-label="Main navigation"
     >
       <Container>

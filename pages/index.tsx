@@ -274,19 +274,27 @@ const Dashboard: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+      {/* horizontal line */}
+      <div className="container">
+        <hr></hr>
+      </div>
       {/* get started section */}
-      <section className=" get-started-section bg-light-blue py-5">
+      <section className=" get-started-section py-5">
         <div className="container my-md-2 my-lg-3 my-xl-4 my-xxl-5">
-          <h3 className="mb-3">Get Started in No Time</h3>
-          <div className="section-intro   mx-auto">
-            CoderPro makes it super easy to get your software project online, so
-            you can start promoting or selling your digital product to your
-            audience.
-          </div>
-          <div className="pt-3 ">
-            <a className="btn btn-outline-primary" href="">
-              Get Started
-            </a>
+          <div className="mw-60 mx-auto text-center">
+            <h3 className="mb-3 fw-bold">
+              Get Started in <span className="text-primary"> No Time</span>
+            </h3>
+            <div className="section-intro   mx-auto">
+              CoderPro makes it super easy to get your software project online,
+              so you can start promoting or selling your digital product to your
+              audience.
+            </div>
+            <div className="pt-3 ">
+              <a className="btn btn-outline-primary" href="">
+                Get Started
+              </a>
+            </div>
           </div>
         </div>
       </section>
