@@ -30,7 +30,7 @@ const CmsLayout: React.FC<Props> = ({ children }) => {
       {/* <aside>
         <Sidebar></Sidebar>
       </aside> */}
-      <main className="container  min-vh-75">{children}</main>
+      <main className="min-vh-75">{children}</main>
       <footer>
         <Footer></Footer>
       </footer>

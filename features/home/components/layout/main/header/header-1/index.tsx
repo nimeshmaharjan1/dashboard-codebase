@@ -4,7 +4,6 @@ import { Offcanvas } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import BtnLogin from './buttons';
-import styles from './header-one.module.scss';
 import Logo from './logo';
 import NavItems from './nav';
 import Search from './search';
@@ -25,7 +24,7 @@ const HeaderOne = () => {
           <span className="fw-bold d-inline-block ml-2">Code</span>
         </Navbar.Brand>
         <button
-          className="navbar-toggler p-0 border-0"
+          className="navbar-toggler p-0 border-0 d-lg-none d-block"
           type="button"
           id="navbarSideCollapse"
           aria-label="Toggle navigation"
@@ -36,20 +35,20 @@ const HeaderOne = () => {
         <Offcanvas
           show={show}
           onHide={handleClose}
-          className={`${styles.offcanvas_collapse} navbar-collapse `}
+          className="offcanvas_collapse"
         >
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header className="w-100" closeButton>
             <Offcanvas.Title>Offcanvas</Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
-            <NavItems></NavItems>
+          <Offcanvas.Body className="w-100">
             <Search></Search>
-            <BtnLogin></BtnLogin>
+            <NavItems></NavItems>
+            {/* <BtnLogin></BtnLogin> */}
           </Offcanvas.Body>
         </Offcanvas>
         <div
-          className={`${styles.offcanvas_collapse} navbar-collapse `}
-          id="navbarsExampleDefault"
+          className="d-lg-flex flex-grow-1 align-items-center d-none"
+          id="navbars"
         >
           <NavItems></NavItems>
           {/* <Search></Search> */}
