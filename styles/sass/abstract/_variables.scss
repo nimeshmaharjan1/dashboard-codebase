@@ -79,8 +79,16 @@ $prefix: $variable-prefix;
       @include button-outline-variant($value);
     }
   }
+  .navbar {
+    --ek-navbar-hover-color: #fff;
+    --ek-nav-link-color: var(--ek-body--color);
+    --ek-nav-link-hover-color: var(--ek-navbar-hover-color);
+  }
 }
 
+$nav-link-color: $primary;
+
+$nav-link-hover-color: darken($primary, 10%);
 // color for the card
 $card-bg: var(--#{$variable-prefix}body-bg);
 $card-color: var(--#{$variable-prefix}body-color);

@@ -17,8 +17,8 @@ const NavItems = () => {
         Pricing
       </Nav.Link>
 
-      <Nav.Link href="#" className="px-3">
-        FAQs
+      <Nav.Link href="/contact" className="px-3">
+        Contact
       </Nav.Link>
 
       <Nav.Link href="/about" className="px-3">

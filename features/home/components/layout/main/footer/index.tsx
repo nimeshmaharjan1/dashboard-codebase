@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <>
-      <footer className="py-4 py-md-4">
+      <div className="bg-light-blue ">
         <div className="container py-4 py-md-5 px-4 px-md-3">
           <div className="row">
             <div className="col-lg-3 mb-3">
@@ -145,7 +145,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <div className="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top align-items-center">
             <p className="text-dark">
               © 2022 Company, Inc. All rights reserved.
             </p>
@@ -195,7 +195,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </footer>
+      </div>
     </>
   );
 };
