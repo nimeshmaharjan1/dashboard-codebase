@@ -1,5 +1,5 @@
 body {
-  padding-top: 80px;
+  // padding-top: 80px;
 }
 .sun,
 .moon {
@@ -25,4 +25,8 @@ body {
 .moon::after {
   background-image: url('../public/assets/icons/bx-moon.svg');
   margin-left: 4px;
+}
+.bg-navbar {
+  background-color: var(--ek-body-bg);
+  transition: background-color 0.1s ease-in-out;
 }

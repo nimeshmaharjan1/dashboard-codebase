@@ -22,20 +22,16 @@
 
   .header_dropdown {
     margin-right: -12px;
-
   }
 
   select {
     background-color: #f5f6f8 !important;
     border: none;
     margin-top: -2px;
-
   }
-
 }
 
 .header_middle {
-
   a {
     text-decoration: none;
 
@@ -44,7 +40,7 @@
     }
   }
 
-  padding:2em;
+  padding: 2em;
   color: #333;
   background: #fff;
   font-size: 1.2rem;
@@ -55,7 +51,6 @@
     max-width: 55.6rem;
     width: 100%;
 
-
     .header_middle_search_searchbox {
       width: 14.6rem;
       border: 3px solid #336699;
@@ -63,14 +58,13 @@
       color: #666666;
 
       &::after {
-        content: "";
+        content: '';
         height: 35px;
         width: 1px;
         background: #e5e5e5;
         position: absolute;
         right: 0;
         top: 50%;
-
       }
     }
 
@@ -109,11 +103,8 @@
 
   .header_middle_right_info {
     color: #336699;
-
   }
 }
-
-
 
 .header_bottom {
   a {
@@ -131,8 +122,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color:
-        #0087ca;
+      background-color: #0087ca;
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }
@@ -179,7 +169,6 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
       border-top: 0;
-
     }
 
     ul {
@@ -217,9 +206,6 @@
               width: 0;
             }
           }
-
-
-
         }
 
         &:hover {
@@ -248,13 +234,9 @@
       &::after {
         width: 0%;
       }
-
     }
   }
-
 }
-
-
 
 //ecommerceheadercss
 .ecommerce_header {
@@ -262,7 +244,7 @@
     padding: 1em 2em;
 
     a {
-      color: rgba(255, 255, 255, .65);
+      color: rgba(255, 255, 255, 0.65);
       text-decoration: none;
     }
 
@@ -271,11 +253,10 @@
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='white' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round'  stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e ");
         background-color: black;
         background-size: 20px;
-        color: rgba(255, 255, 255, .65);
+        color: rgba(255, 255, 255, 0.65);
         border: none;
       }
     }
-
   }
 
   .ecommerce_header_middle {
@@ -328,7 +309,6 @@
       &::after {
         width: 0 !important;
       }
-
     }
 
     .header_bottom_left {
@@ -336,9 +316,6 @@
       max-width: 55.6rem;
       width: 100%;
       margin: auto;
-
-
     }
-
   }
 }
