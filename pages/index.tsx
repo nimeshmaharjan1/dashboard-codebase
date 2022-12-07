@@ -1,4 +1,4 @@
-import CmsLayout from '@features/home/components/layout/main';
+import MainLayout from '@features/home/components/layout/main';
 import { NextPageWithLayout } from '@pages/_app';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -305,5 +305,5 @@ const Dashboard: NextPageWithLayout = () => {
 export default Dashboard;
 
 Dashboard.getLayout = (page: React.ReactElement) => {
-  return <CmsLayout>{page}</CmsLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
