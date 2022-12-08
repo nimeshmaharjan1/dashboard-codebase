@@ -1,4 +1,4 @@
-import CmsLayout from '@features/home/components/layout/main';
+import MainLayout from '@features/home/components/layout/main';
 import { NextPageWithLayout } from '@pages/_app';
 
 import Button from 'react-bootstrap/Button';
@@ -151,5 +151,5 @@ const Contact: NextPageWithLayout = () => {
 export default Contact;
 
 Contact.getLayout = (page: React.ReactElement) => {
-  return <CmsLayout>{page}</CmsLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
