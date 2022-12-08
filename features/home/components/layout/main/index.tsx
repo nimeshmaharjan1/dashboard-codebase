@@ -8,7 +8,7 @@ export type Props = {
   children: React.ReactNode;
 };
 
-const CmsLayout: React.FC<Props> = ({ children }) => {
+const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <div className="">
       <Head>
@@ -38,4 +38,4 @@ const CmsLayout: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default CmsLayout;
+export default MainLayout;
