@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './header-ecommerce.module.scss';
+
 const HeaderEcommerce = () => {
   //You can concatenate or just give one styles such as shown below
   return (
@@ -29,7 +30,7 @@ const HeaderEcommerce = () => {
         </div>
 
         <span className={'text-black'}>
-          <a href="/" className={`pe-1`}>
+          <Link href="/" className={`pe-1`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -41,11 +42,11 @@ const HeaderEcommerce = () => {
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
             </svg>
             Signin
-          </a>
+          </Link>
           <span>/</span>
-          <a href="/" className={`ms-0 ps-1`}>
+          <Link href="/" className={`ms-0 ps-1`}>
             Register
-          </a>
+          </Link>
         </span>
       </div>
       {/* </div>
@@ -57,7 +58,7 @@ const HeaderEcommerce = () => {
         <div
           className={`container-fluid d-flex flex-lg-nowrap flex-wrap gap-5 `}
         >
-          <a href="/" className={'navbar-brand p-0 align-self-center '}>
+          <Link href="/" className={'navbar-brand p-0 align-self-center '}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -74,7 +75,7 @@ const HeaderEcommerce = () => {
                 fill="currentColor"
               ></path>
             </svg>
-          </a>
+          </Link>
           <div
             className={`${styles.header_middle_left} align-items-center d-flex order-2 order-xl-1 flex-grow-1`}
           >
@@ -125,7 +126,7 @@ const HeaderEcommerce = () => {
           <div
             className={`${styles.header_middle_right} ms-auto d-flex order-xl-2 order-1 mb-xl-0 align-self-center`}
           >
-            <a href="">
+            <Link href="">
               <div
                 className={`d-flex h3 border-end lg:border-1 pe-xl-4 me-xl-4 pe-0 `}
               >
@@ -148,9 +149,9 @@ const HeaderEcommerce = () => {
                   <p className={`mb-0 fw-bold`}>01(3399221)</p>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/" className={`me-xl-5 me-3 d-block`}>
+            <Link href="/" className={`me-xl-5 me-3 d-block`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -162,8 +163,8 @@ const HeaderEcommerce = () => {
                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
               </svg>
               <p className={'d-xl-block d-none'}>Wishlist</p>
-            </a>
-            <a href="/" className={`me-xl-5 me-3 d-block`}>
+            </Link>
+            <Link href="/" className={`me-xl-5 me-3 d-block`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -178,8 +179,8 @@ const HeaderEcommerce = () => {
                 />
               </svg>
               <p className={'d-xl-block d-none'}>Compare</p>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               className={` d-block position-relative  me-0`}
               data-bs-toggle="offcanvas"
@@ -202,7 +203,7 @@ const HeaderEcommerce = () => {
               >
                 2
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -238,17 +239,17 @@ const HeaderEcommerce = () => {
               <li>
                 <Link href="">Home</Link>
                 <div className={`${styles.dropdown_content}`}>
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <Link href="#">Link 1</Link>
+                  <Link href="#">Link 2</Link>
+                  <Link href="#">Link 3</Link>
                 </div>
               </li>
               <li>
                 <Link href="">Shop</Link>
                 <div className={`${styles.dropdown_content}`}>
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <Link href="#">Link 1</Link>
+                  <Link href="#">Link 2</Link>
+                  <Link href="#">Link 3</Link>
                 </div>
               </li>
               <li>
@@ -263,7 +264,7 @@ const HeaderEcommerce = () => {
             </ul>
           </div>
           <div className={`${styles.header_bottom_right} ms-auto`}>
-            <a href="">
+            <Link href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -276,8 +277,8 @@ const HeaderEcommerce = () => {
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
               </svg>
               Track order
-            </a>
-            <a href="">
+            </Link>
+            <Link href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -290,7 +291,7 @@ const HeaderEcommerce = () => {
                 <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1zm0 5.586 7 7L13.586 9l-7-7H2v4.586z" />
               </svg>
               Daily Deals
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -346,7 +347,7 @@ const HeaderEcommerce = () => {
               </Link>
             </div>
             <div className={'d-xl-block d-none'}>
-              <a href="">
+              <Link href="">
                 <p className={'mb-0'}>
                   Learn More
                   <svg
@@ -363,7 +364,7 @@ const HeaderEcommerce = () => {
                     />
                   </svg>
                 </p>
-              </a>
+              </Link>
             </div>
             <div className={'d-flex'}>
               <Link href="/">
@@ -433,7 +434,7 @@ const HeaderEcommerce = () => {
                   'navbar-toolbar d-flex flex-shrink-0 align-items-center '
                 }
               >
-                <a href="" className={`text-decoration-none`}>
+                <Link href="" className={`text-decoration-none`}>
                   <div
                     className={`d-flex h3 border-end pe-xl-4 pe-0 me-xl-4 me-0`}
                   >
@@ -456,9 +457,9 @@ const HeaderEcommerce = () => {
                       <p className={`mb-0 fw-normal fs-5`}>My Account</p>
                     </div>
                   </div>
-                </a>
+                </Link>
 
-                <a href="/" className={`me-4 d-block position-relative`}>
+                <Link href="/" className={`me-4 d-block position-relative`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -474,9 +475,9 @@ const HeaderEcommerce = () => {
                   >
                     2
                   </span>
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="/"
                   className={` ${styles.carticon} d-block position-relative me-4`}
                 >
@@ -496,13 +497,13 @@ const HeaderEcommerce = () => {
                   >
                     2
                   </span>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/"
                   className={` d-block position-relative  text-decoration-none fw-semibold`}
                 >
                   <p className={'fs-5 mb-0'}>$150.00</p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -514,7 +515,7 @@ const HeaderEcommerce = () => {
         >
           <div className={`container-fluid d-flex justify-between`}>
             <div className={'me-5 align-self-center me-4 '}>
-              <a href="" className={'d-flex fw-bold'}>
+              <Link href="" className={'d-flex fw-bold'}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -526,32 +527,32 @@ const HeaderEcommerce = () => {
                   <path d="M0 0h16v16H0V0zm1 1v6.5h6.5V1H1zm7.5 0v6.5H15V1H8.5zM15 8.5H8.5V15H15V8.5zM7.5 15V8.5H1V15h6.5z" />
                 </svg>
                 Departments
-              </a>
+              </Link>
             </div>
             <div className={`${styles.header_bottom_left} d-flex`}>
               <ul>
                 <li>
                   <Link href="">Home</Link>
                   <div className={`${styles.dropdown_content}`}>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <Link href="#">Link 1</Link>
+                    <Link href="#">Link 2</Link>
+                    <Link href="#">Link 3</Link>
                   </div>
                 </li>
                 <li>
                   <Link href="">Shop</Link>
                   <div className={`${styles.dropdown_content}`}>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <Link href="#">Link 1</Link>
+                    <Link href="#">Link 2</Link>
+                    <Link href="#">Link 3</Link>
                   </div>
                 </li>
                 <li>
                   <Link href="">Vendor</Link>
                   <div className={`${styles.dropdown_content}`}>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <Link href="#">Link 1</Link>
+                    <Link href="#">Link 2</Link>
+                    <Link href="#">Link 3</Link>
                   </div>
                 </li>
                 <li>
