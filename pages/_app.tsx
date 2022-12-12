@@ -23,7 +23,7 @@ function BaseCode({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <ThemeProvider enableSystem={true} attribute="class">
+    <ThemeProvider attribute="class">
       <SessionProvider {...{ session }}>
         {getLayout(<Component {...pageProps} />)}
       </SessionProvider>

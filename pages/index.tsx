@@ -9,10 +9,11 @@ import Monitor from '../public/assets/images/monitor.svg';
 import Complete from '../public/assets/images/project_complete.svg';
 import Surveillance from '../public/assets/images/surveillance.svg';
 import ReactImage from '../public/assets/react.svg';
+
 const Dashboard: NextPageWithLayout = () => {
   return (
     <>
-      <section className="hero-section py-3 ">
+      <section className="hero-section py-3">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 pt-3 mb-5 mb-lg-0">
