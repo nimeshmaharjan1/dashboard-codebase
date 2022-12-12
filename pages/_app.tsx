@@ -1,11 +1,12 @@
+import '../styles/globals.scss';
+import '../styles/sass/styles.scss';
+
 import { NextPage } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-import '../styles/globals.scss';
-import '../styles/sass/styles.scss';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -23,7 +24,7 @@ function BaseCode({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider themes={['light', 'darken']} attribute="class">
       <SessionProvider {...{ session }}>
         {getLayout(<Component {...pageProps} />)}
       </SessionProvider>

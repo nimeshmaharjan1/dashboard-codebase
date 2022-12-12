@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
 import { useTheme } from 'next-themes';
+import Button from 'react-bootstrap/Button';
 
 //Import module scss as styles
 // import styles from './*.module.scss';
@@ -20,7 +20,7 @@ const BtnLogin = () => {
             if (e.target.checked) {
               setTheme('darken');
             } else {
-              setTheme('luxury');
+              setTheme('light');
             }
           }}
           type="checkbox"
