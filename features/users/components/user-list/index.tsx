@@ -80,7 +80,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 const defaultExpandable = { expandedRowRender: (record: DataType) => <p>{record.description}</p> };
-const defaultTitle = () => 'Users';
+const defaultTitle = () => 'Users (Click on any row to go to the dynamic user page.)';
 const defaultFooter = () => 'Here is footer';
 
 const UserList: React.FC = () => {
