@@ -11,5 +11,5 @@ const Users: NextPageWithLayout = () => {
 export default Users
 
 Users.getLayout = function getLayout(page: React.ReactElement) {
-    return <MainLayout>{page}</MainLayout>;
+    return <MainLayout title={'Users'}>{page}</MainLayout>;
 };
