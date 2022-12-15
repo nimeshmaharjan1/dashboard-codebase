@@ -6,6 +6,7 @@
       "@features/*": ["features/*"],
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"],
+      "@store/*": ["store/*"],
       "@styles/*": ["styles/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],

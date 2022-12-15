@@ -5,7 +5,8 @@ import {
     SettingOutlined,
     UserOutlined
 } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Avatar, Col, Layout, Menu, Row } from 'antd';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 const { Header, Sider, Content } = Layout;
@@ -15,6 +16,9 @@ type IProps = {
 }
 
 const MainLayout: React.FC<IProps> = ({ children }) => {
+
+    const router = useRouter()
+
     const [collapsed, setCollapsed] = useState(false);
     return (
         <Layout className="layout">
@@ -43,6 +47,20 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
                             label: 'Settings',
                         },
                     ]}
+                    onClick={(value) => {
+                        const { key } = value;
+                        switch (key) {
+                            case '1':
+                                router.push('/');
+                                break;
+                            case '2':
+                                router.push('/users')
+                                break;
+                            case '3':
+                                router.push('/settings')
+                                break;
+                        }
+                    }}
                 />
             </Sider>
             <Layout className="site-layout" style={{ minHeight: '100vh' }}>
@@ -52,10 +70,16 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
                         padding: 0,
                     }}
                 >
-                    {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: 'trigger',
-                        onClick: () => setCollapsed(!collapsed),
-                    })}
+                    <Row>
+                        <Col xs={22}>
+                            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                                className: 'trigger',
+                                onClick: () => setCollapsed(!collapsed),
+                            })}</Col>
+                        <Col xs={2}>
+                            <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+                        </Col>
+                    </Row>
                 </Header>
                 <Content
                     className="site-layout-background"
