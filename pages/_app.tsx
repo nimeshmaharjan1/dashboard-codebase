@@ -9,7 +9,13 @@ import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 
 import { ConfigProvider, theme } from 'antd';
+import { Session } from "next-auth";
+import { SessionProvider as AuthProvider } from "next-auth/react";
+
 import { Provider } from 'react-redux';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -17,24 +23,29 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
+  pageProps: { session?: Session };
 };
-function App({ Component, pageProps: { ...pageProps } }: AppPropsWithLayout) {
+function App({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
 
   const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <Provider store={store}>
-      <ConfigProvider theme={{
-        algorithm: theme.defaultAlgorithm,
-        token: {
-          colorPrimary: '#00b96b',
-        },
-      }}>
-        {getLayout(
-          <>
-            <NextNProgress />
-            <Component {...pageProps} />
-          </>
-        )}</ConfigProvider>
+      <AuthProvider session={session}>
+        <ConfigProvider theme={{
+          algorithm: theme.defaultAlgorithm,
+          token: {
+            colorPrimary: '#00b96b',
+          },
+        }}>
+          {getLayout(
+            <>
+              <NextNProgress />
+              <Component {...pageProps} />
+            </>
+          )}</ConfigProvider>
+      </AuthProvider>
+      <ToastContainer></ToastContainer>
     </Provider>
   )
 

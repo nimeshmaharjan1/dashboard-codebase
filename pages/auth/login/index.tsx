@@ -1,25 +1,60 @@
 import { EyeInvisibleOutlined, EyeTwoTone, GithubOutlined, GoogleOutlined, TwitterOutlined, UserOutlined } from '@ant-design/icons';
+import { authOptions } from '@pages/api/auth/[...nextauth]';
+import { ILogin } from '@shared/interfaces/shared.interface';
+import { showToast, Types } from '@shared/utils/toast.util';
 import { Button, Card, Col, Form, Input, Layout, Row } from 'antd';
+import { unstable_getServerSession } from 'next-auth';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import styles from './login.module.scss';
 
 const { Content } = Layout;
 
-interface ILogin {
-    username: string,
-    password: string
+export const getServerSideProps = async (context: any) => {
+    const session = await unstable_getServerSession(context.req, context.res, authOptions)
+    if (!session) {
+        return {
+            props: {
+            }
+        }
+    }
+    return {
+        redirect: {
+            destination: '/',
+            permanent: true
+        }
+    }
 }
 
 const Login = () => {
+    const { status } = useSession()
+    const router = useRouter()
+    React.useEffect(() => {
+        if (status === 'authenticated') {
+            router.push('/')
+        }
+    }, [router, status])
+
     const defaultValues = {
         username: '',
         password: ''
     } as ILogin
-    const { register, formState: { errors }, handleSubmit, watch, control } = useForm({ defaultValues, mode: 'onChange' })
 
-    const login = (values: ILogin) => {
-        console.log(values)
+    const { formState: { errors }, handleSubmit, control } = useForm({ defaultValues, mode: 'onChange' })
+
+    const login = async (values: ILogin) => {
+        try {
+            const res = await signIn('credentials', { ...values, redirect: false })
+            if (res?.error) {
+                return showToast(Types.error, res.error)
+            }
+            showToast(Types.success, 'Successfully logged in.')
+        } catch (error) {
+            showToast(Types.error, 'Something went wrong while trying to login please try again.')
+        }
     }
 
 
@@ -27,7 +62,7 @@ const Login = () => {
         <Layout>
             <Content className={styles.content}>
                 <Card title={<h2 style={{ textAlign: 'center' }}>LOGIN</h2>} style={{ width: 400 }}>
-                    <Form layout='vertical' onFinish={handleSubmit(login)} autoComplete={'off'}>
+                    <Form layout='vertical' autoComplete={'off'}>
                         <Controller
                             control={control}
                             name="username"
@@ -63,7 +98,10 @@ const Login = () => {
                             )}
                         />
                         <Form.Item style={{ marginTop: 30 }}>
-                            <Button block type="primary" htmlType="submit">
+                            <Button block type="primary" htmlType='button' onClick={async (e) => {
+                                e.preventDefault()
+                                await handleSubmit(login)()
+                            }}>
                                 LOGIN
                             </Button>
                         </Form.Item>

@@ -42,11 +42,11 @@ Home.getLayout = function getLayout(page: React.ReactElement) {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export const getServerSideProps = () => {
-  return {
-    redirect: {
-      destination: '/auth/login',
-      permanent: true
-    }
-  }
-}
+// export const getServerSideProps = () => {
+//   return {
+//     redirect: {
+//       destination: '/auth/login',
+//       permanent: true
+//     }
+//   }
+// }
