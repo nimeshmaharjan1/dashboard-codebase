@@ -69,7 +69,7 @@ const Login = () => {
                         <Controller
                             control={control}
                             name="username"
-                            rules={{ required: 'This is required.' }}
+                            rules={{ required: 'Username is required.' }}
                             render={({
                                 field: { onChange, value, name, ref },
                                 fieldState: { error },
@@ -78,7 +78,7 @@ const Login = () => {
                                     hasFeedback={error ? true : false}
                                     validateStatus={error && 'error'}
                                     help={error?.message}>
-                                    <Input status={error && 'error'} onChange={onChange} value={value} ref={ref} name={name} placeholder="Enter username here..." suffix={<UserOutlined />} />
+                                    <Input status={error && 'error'} onChange={onChange} value={value} ref={ref} name={name} placeholder="admin" suffix={<UserOutlined />} />
                                 </Form.Item>
 
                             )}
@@ -86,7 +86,7 @@ const Login = () => {
                         <Controller
                             control={control}
                             name="password"
-                            rules={{ required: 'This is required.' }}
+                            rules={{ required: 'Password is required.' }}
                             render={({
                                 field: { onChange, value, name, ref },
                                 fieldState: { error },
@@ -95,7 +95,7 @@ const Login = () => {
                                     hasFeedback={error ? true : false}
                                     validateStatus={error && 'error'}
                                     help={error?.message}>
-                                    <Input.Password {...{ onChange, value, name, ref }} placeholder="Enter password here..." iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
+                                    <Input.Password {...{ onChange, value, name, ref }} placeholder="admin" iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
                                 </Form.Item>
 
                             )}
