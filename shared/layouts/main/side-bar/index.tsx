@@ -1,5 +1,6 @@
-import { HomeOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, LogoutOutlined, SettingOutlined, UnorderedListOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
+import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 const { Sider } = Layout
@@ -30,12 +31,12 @@ const MainLayoutSidebar = ({ collapsed }: { collapsed: boolean }) => {
                         children:
                             [{
                                 key: 'sub-user-menu-1',
-                                icon: null,
-                                label: 'User List',
+                                icon: <UnorderedListOutlined />,
+                                label: 'List',
                             }, {
                                 key: 'sub-user-menu-2',
-                                icon: null,
-                                label: 'Item Two',
+                                icon: <UserAddOutlined />,
+                                label: 'Add',
                             }]
                     },
                     {
@@ -43,6 +44,11 @@ const MainLayoutSidebar = ({ collapsed }: { collapsed: boolean }) => {
                         icon: <SettingOutlined />,
                         label: 'Settings',
                     },
+                    {
+                        key: '4',
+                        icon: <LogoutOutlined />,
+                        label: 'Logout'
+                    }
                 ]}
                 onClick={(value) => {
                     const { key } = value;
@@ -53,8 +59,14 @@ const MainLayoutSidebar = ({ collapsed }: { collapsed: boolean }) => {
                         case 'sub-user-menu-1':
                             router.push('/users')
                             break;
+                        case 'sub-user-menu-2':
+                            router.push('/users/create')
+                            break;
                         case '3':
                             router.push('/settings')
+                            break;
+                        case '4':
+                            signOut()
                             break;
                     }
                 }}
