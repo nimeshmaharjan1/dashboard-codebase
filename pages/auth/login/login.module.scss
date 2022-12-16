@@ -1,0 +1,30 @@
+.content {
+  min-height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.or_line {
+  position: relative;
+  text-align: center;
+  &:before {
+    content: ' ';
+    display: block;
+    height: 2px;
+    width: 130px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #00b96b;
+  }
+  &:after {
+    content: ' ';
+    height: 2px;
+    width: 130px;
+    background: #00b96b;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+}

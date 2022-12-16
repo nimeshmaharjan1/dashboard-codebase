@@ -8,6 +8,7 @@ import type { AppProps } from 'next/app';
 
 import NextNProgress from 'nextjs-progressbar';
 
+import { ConfigProvider, theme } from 'antd';
 import { Provider } from 'react-redux';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -22,12 +23,18 @@ function App({ Component, pageProps: { ...pageProps } }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <Provider store={store}>
-      {getLayout(
-        <>
-          <NextNProgress />
-          <Component {...pageProps} />
-        </>
-      )}
+      <ConfigProvider theme={{
+        algorithm: theme.defaultAlgorithm,
+        token: {
+          colorPrimary: '#00b96b',
+        },
+      }}>
+        {getLayout(
+          <>
+            <NextNProgress />
+            <Component {...pageProps} />
+          </>
+        )}</ConfigProvider>
     </Provider>
   )
 
