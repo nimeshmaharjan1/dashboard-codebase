@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# secrets
+.env.local
+.env.development
+.env
+
 # testing
 /coverage
 

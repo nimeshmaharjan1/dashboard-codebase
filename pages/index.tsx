@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 
 import HomeChart from '@features/home/components/chart';
-import MainLayout from '@shared/layouts/main';
-import { NextPageWithLayout } from './_app';
 import StatsCard from '@features/home/components/stats-card';
 import UserTable from '@features/home/components/user-table';
+import MainLayout from '@shared/layouts/main';
+import { NextPageWithLayout } from './_app';
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -41,3 +41,12 @@ export default Home;
 Home.getLayout = function getLayout(page: React.ReactElement) {
   return <MainLayout>{page}</MainLayout>;
 };
+
+// export const getServerSideProps = () => {
+//   return {
+//     redirect: {
+//       destination: '/auth/login',
+//       permanent: true
+//     }
+//   }
+// }
