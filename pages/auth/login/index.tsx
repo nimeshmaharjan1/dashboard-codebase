@@ -39,17 +39,21 @@ const Login = () => {
     const { formState: { errors }, handleSubmit, control } = useForm({ defaultValues, mode: 'onChange' })
 
     const [isLoading, setIsLoading] = React.useState(false)
+    const [isFormDisabled, setIsFormDisabled] = React.useState(false)
 
     const login = async (values: ILogin) => {
         setIsLoading(true)
+        setIsFormDisabled(true)
         try {
             const res = await signIn('credentials', { ...values, redirect: false })
             if (res?.error) {
+                setIsFormDisabled(false)
                 return showToast(Types.error, res.error)
             }
             showToast(Types.success, 'Successfully logged in.')
         } catch (error) {
             showToast(Types.error, 'Something went wrong while trying to login please try again.')
+            setIsFormDisabled(false)
         } finally {
             setIsLoading(false)
         }
@@ -65,7 +69,7 @@ const Login = () => {
         <Layout>
             <Content className={styles.content}>
                 <Card title={<h2 style={{ textAlign: 'center' }}>LOGIN</h2>} style={{ width: 400 }}>
-                    <Form layout='vertical' autoComplete={'off'} disabled={isLoading}>
+                    <Form layout='vertical' autoComplete={'off'} disabled={isFormDisabled}>
                         <Controller
                             control={control}
                             name="username"
