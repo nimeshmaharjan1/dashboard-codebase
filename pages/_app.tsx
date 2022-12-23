@@ -9,8 +9,8 @@ import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 
 import { ConfigProvider, theme } from 'antd';
-import { Session } from "next-auth";
-import { SessionProvider as AuthProvider } from "next-auth/react";
+import { Session } from 'next-auth';
+import { SessionProvider as AuthProvider } from 'next-auth/react';
 
 import { Provider } from 'react-redux';
 
@@ -25,30 +25,39 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
   pageProps: { session?: Session };
 };
-function App({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
-
+function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
-
+  const primaryColor = '#00b96b';
   return (
     <Provider store={store}>
       <AuthProvider session={session}>
-        <ConfigProvider theme={{
-          algorithm: theme.defaultAlgorithm,
-          token: {
-            colorPrimary: '#00b96b',
-          },
-        }}>
+        <ConfigProvider
+          theme={{
+            algorithm: theme.defaultAlgorithm,
+            token: {
+              colorPrimary: primaryColor,
+            },
+          }}
+        >
           {getLayout(
             <>
-              <NextNProgress color='#00b96b' options={{ showSpinner: false }} showOnShallow height={6} />
+              <NextNProgress
+                color={primaryColor}
+                options={{ showSpinner: false }}
+                showOnShallow
+                height={6}
+              />
               <Component {...pageProps} />
             </>
-          )}</ConfigProvider>
+          )}
+        </ConfigProvider>
       </AuthProvider>
       <ToastContainer></ToastContainer>
     </Provider>
-  )
-
+  );
 }
 
 export default App;
