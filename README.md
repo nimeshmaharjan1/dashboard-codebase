@@ -30,7 +30,45 @@ Followed by the data fetching tool we chose react query as it can be implemented
 
 As for building forms and validations we chose React Hook Form which is a library that helps you build forms with React and can be integrated with any other CSS libraries and performs validation with ease. It is designed to be lightweight, efficient, and easy to use. With React Hook Form, wecan create custom React hooks to manage our form state and validations. This library could be a bit confusing but the documentation is really helpful [react-hook-form.com](https://react-hook-form.com/).
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- ## Folder Structure
+
+- [**features**](features)
+  - [**home**](features/home)
+    - [**components**](features/home/components)
+      - [**chart**](features/home/components/chart)
+      - [**stats-card**](features/home/components/stats-card)
+      - [**user-table**](features/home/components/user-table)
+  - [**users**](features/users)
+    - [**components**](features/users/components)
+      - [**user-list**](features/users/components/user-list)
+- [**pages**](pages)
+  - [**api**](pages/api)
+    - [**auth**](pages/api/auth)
+  - [**auth**](pages/auth)
+    - [**login**](pages/auth/login)
+  - [**settings**](pages/settings)
+  - [**users**](pages/users)
+    - [**\[userId\]**](pages/users/[userId])
+    - [**create**](pages/users/create)
+- [**public**](public)
+- [**shared**](shared)
+  - [**components**](shared/components)
+    - [**buttons**](shared/components/buttons)
+      - [**primary-button**](shared/components/buttons/primary-button)
+      - [**secondary-button**](shared/components/buttons/secondary-button)
+    - [**spinner**](shared/components/spinner)
+    - [**upload-file**](shared/components/upload-file)
+  - [**hooks**](shared/hooks)
+  - [**interfaces**](shared/interfaces)
+  - [**layouts**](shared/layouts)
+    - [**main**](shared/layouts/main)
+      - [**header**](shared/layouts/main/header)
+      - [**side-bar**](shared/layouts/main/side-bar)
+  - [**utils**](shared/utils)
+- [**store**](store)
+  - [**slices**](store/slices)
+    - [**user-slice**](store/slices/user-slice)
+- [**styles**](styles)
 
 ## Getting Started
 
