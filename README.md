@@ -32,47 +32,121 @@ As for building forms and validations we chose React Hook Form which is a librar
 
 - ## Folder Structure
 
-- [**features**](features)
-  - [**home**](features/home)
-    - [**components**](features/home/components)
-      - [**chart**](features/home/components/chart)
-      - [**stats-card**](features/home/components/stats-card)
-      - [**user-table**](features/home/components/user-table)
-  - [**users**](features/users)
-    - [**components**](features/users/components)
-      - [**user-list**](features/users/components/user-list)
-- [**pages**](pages)
-  - [**api**](pages/api)
-    - [**auth**](pages/api/auth)
-  - [**auth**](pages/auth)
-    - [**login**](pages/auth/login)
-  - [**settings**](pages/settings)
-  - [**users**](pages/users)
-    - [**\[userId\]**](pages/users/[userId])
-    - [**create**](pages/users/create)
-- [**public**](public)
-- [**shared**](shared)
-  - [**components**](shared/components)
-    - [**buttons**](shared/components/buttons)
-      - [**primary-button**](shared/components/buttons/primary-button)
-      - [**secondary-button**](shared/components/buttons/secondary-button)
-    - [**spinner**](shared/components/spinner)
-    - [**upload-file**](shared/components/upload-file)
-  - [**hooks**](shared/hooks)
-  - [**interfaces**](shared/interfaces)
-  - [**layouts**](shared/layouts)
-    - [**main**](shared/layouts/main)
-      - [**header**](shared/layouts/main/header)
-      - [**side-bar**](shared/layouts/main/side-bar)
-  - [**utils**](shared/utils)
-- [**store**](store)
-  - [**slices**](store/slices)
-    - [**user-slice**](store/slices/user-slice)
-- [**styles**](styles)
+Below is an example for the conventions and folder and file naming conventions which should be followed.
 
-## Getting Started
+The following folder tree is basically an example of how a scalable Nextjs application architecture might look and can be customized according to the developers' wish or to any project as required.
 
-First, run the development server:
+As the pages directory is solely for routing purposes as stated by Nextjs; another folder named features can be created to store the necessary files needed for each module such as the home module which can contain its own components, utilities and its own layout. Please check and go through the documentation on the pages directory and the layouts provided by the official NextJs team [NextJs/pages](https://nextjs.org/docs/basic-features/pages) & [NextJs/layouts](https://nextjs.org/docs/basic-features/layouts).
+
+### *The _app.tsx is the entry point and index.tsx file is the / route which are found inside the pages directory for every Nextjs application.*
+
+The document structure of the DOM can be altered from the _document.js file inside the pages directory. [NextJs/_document](https://nextjs.org/docs/advanced-features/custom-document)
+
+Any file which has [] around its name inside the pages directory will be treated as a dynamic page by Next automatically.			
+
+```
+📦
+├─ .env.example
+├─ .eslintrc.json # ESlint configuration file can be changed to .js file
+├─ .gitignore
+├─ .husky
+│  ├─ commit-msg
+│  ├─ pre-commit
+│  └─ pre-push
+├─ .npmrc
+├─ .prettierignore
+├─ .prettierrc # Prettier configuration file can be changed to .js or .json file
+├─ .vscode
+│  └─ settings.json # common vscode settings file
+├─ README.md
+├─ commitlint.config.js
+├─ features
+│  ├─ home
+│  │  └─ components
+│  │     ├─ chart
+│  │     │  └─ index.tsx
+│  │     ├─ stats-card
+│  │     │  └─ index.tsx
+│  │     └─ user-table
+│  │        └─ index.tsx
+│  └─ users
+│     └─ components
+│        └─ user-list
+│           └─ index.tsx
+├─ next.config.js
+├─ package.json
+├─ pages # entry point and all the routes index.tsx is the / route.
+│  ├─ _app.tsx
+│  ├─ api
+│  │  ├─ auth
+│  │  │  └─ [...nextauth].ts
+│  │  └─ hello.ts
+│  ├─ auth
+│  │  └─ login
+│  │     ├─ index.tsx
+│  │     └─ login.module.scss
+│  ├─ index.tsx
+│  ├─ settings
+│  │  └─ index.tsx
+│  └─ users
+│     ├─ [userId]
+│     │  └─ index.tsx
+│     ├─ create
+│     │  └─ index.tsx
+│     ├─ index.tsx
+│     └─ users.module.scss
+├─ public
+│  ├─ favicon.ico
+│  └─ vercel.svg
+├─ shared
+│  ├─ components
+│  │  ├─ buttons
+│  │  │  ├─ primary-button
+│  │  │  │  └─ index.tsx
+│  │  │  └─ secondary-button
+│  │  │     └─ index.tsx
+│  │  ├─ spinner
+│  │  │  └─ index.tsx
+│  │  └─ upload-file
+│  │     └─ index.tsx
+│  ├─ hooks
+│  │  └─ store.hook.ts
+│  ├─ interfaces
+│  │  └─ shared.interface.ts
+│  ├─ layouts
+│  │  └─ main
+│  │     ├─ header
+│  │     │  └─ index.tsx
+│  │     ├─ index.tsx
+│  │     ├─ main-layout.scss
+│  │     └─ side-bar
+│  │        └─ index.tsx
+│  └─ utils
+│     └─ toast.util.ts
+├─ store
+│  ├─ index.ts
+│  └─ slices
+│     └─ user-slice
+│        └─ index.ts
+├─ styles
+│  └─ globals.scss
+├─ tsconfig.json
+└─ yarn.lock
+```
+
+## Dev Setup
+
+First, install the necessary packages: 
+
+```bash
+yarn
+```
+or with
+```bash
+yarn install
+```
+
+run the development server:
 
 ```bash
 yarn dev
