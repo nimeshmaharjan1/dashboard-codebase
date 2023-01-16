@@ -22,17 +22,9 @@ For this codebase we chose Ant Design 5 to be its CSS framework. So prior knowle
 
 As for the global state management tool we have chosen the newly introduced redux toolkit which hugely decreases the boilerplate necessary to implement redux into a project. So prior knowledge of redux and its flow structure is necessary.
 
-6. **React Toolkit Query**
+6. **Axios**
 
-Followed by the data fetching tool we chose react query which can be implemented with react toolkit. It is often described as the missing data-fetching library for React, but in more technical terms, it makes **fetching, caching, synchronizing and updating server state** in our React applications a breeze.This library could be a bit confusing but the documentation is really helpful [redux-toolkit.js.org](https://redux-toolkit.js.org/rtk-query/overview)
-
-7. **React Hook Form**
-
-As for building forms and validations we chose React Hook Form which is a library that helps you build forms with React and can be integrated with any other CSS libraries and performs validation with ease. It is designed to be lightweight, efficient, and easy to use. With React Hook Form, we can create custom React hooks to manage our form state and validations. This library could be a bit confusing but the documentation is really helpful [react-hook-form.com](https://react-hook-form.com/).
-
-8. **Axios**
-
-As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [axios-http.com/](https://axios-http.com/) 
+As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [axios-http.com/](https://axios-http.com/)
 
 - ## Folder Structure
 
@@ -42,11 +34,11 @@ The following folder tree is basically an example of how a scalable Nextjs appli
 
 As the pages directory is solely for routing purposes as stated by Nextjs; another folder named features can be created to store the necessary files needed for each module such as the home module which can contain its own components, utilities and its own layout. Please check and go through the documentation on the pages directory and the layouts provided by the official NextJs team [NextJs/pages](https://nextjs.org/docs/basic-features/pages) & [NextJs/layouts](https://nextjs.org/docs/basic-features/layouts).
 
-### *The _app.tsx is the entry point and index.tsx file is the / route which are found inside the pages directory for every Nextjs application.*
+### _The \_app.tsx is the entry point and index.tsx file is the / route which are found inside the pages directory for every Nextjs application._
 
-The document structure of the DOM can be altered from the _document.js file inside the pages directory. [NextJs/_document](https://nextjs.org/docs/advanced-features/custom-document)
+The document structure of the DOM can be altered from the \_document.js file inside the pages directory. [NextJs/\_document](https://nextjs.org/docs/advanced-features/custom-document)
 
-Any file which has [] around its name inside the pages directory will be treated as a dynamic page by Next automatically.			
+Any file which has [] around its name inside the pages directory will be treated as a dynamic page by Next automatically.
 
 ```
 📦
@@ -136,12 +128,14 @@ Any file which has [] around its name inside the pages directory will be treated
 
 ## Dev Setup
 
-First, install the necessary packages: 
+First, install the necessary packages:
 
 ```bash
 yarn
 ```
+
 or with
+
 ```bash
 yarn install
 ```
