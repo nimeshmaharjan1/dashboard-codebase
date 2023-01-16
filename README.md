@@ -67,7 +67,7 @@ Any file which has [] around its name inside the pages directory will be treated
 │  │     │  └─ index.tsx
 │  │     ├─ stats-card
 │  │     │  └─ index.tsx
-│  │     └─ user-table
+│  │     └─ table
 │  │        └─ index.tsx
 │  └─ users
 │     └─ components
