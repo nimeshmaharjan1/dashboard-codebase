@@ -22,9 +22,9 @@ For this codebase we chose Ant Design 5 to be its CSS framework. So prior knowle
 
 As for the global state management tool we have chosen the newly introduced redux toolkit which hugely decreases the boilerplate necessary to implement redux into a project. So prior knowledge of redux and its flow structure is necessary.
 
-6. **React Query**
+6. **React Toolkit Query**
 
-Followed by the data fetching tool we chose react query as it can be implemented with any other state management library. It is often described as the missing data-fetching library for React, but in more technical terms, it makes **fetching, caching, synchronizing and updating server state** in our React applications a breeze.
+Followed by the data fetching tool we chose react query which can be implemented with react toolkit. It is often described as the missing data-fetching library for React, but in more technical terms, it makes **fetching, caching, synchronizing and updating server state** in our React applications a breeze.This library could be a bit confusing but the documentation is really helpful [redux-toolkit.js.org](https://redux-toolkit.js.org/rtk-query/overview)
 
 7. **React Hook Form**
 
@@ -32,7 +32,7 @@ As for building forms and validations we chose React Hook Form which is a librar
 
 8. **Axios**
 
-As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [Axios](https://axios-http.com/) 
+As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [axios-http.com/](https://axios-http.com/) 
 
 - ## Folder Structure
 
