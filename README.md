@@ -30,6 +30,10 @@ Followed by the data fetching tool we chose react query as it can be implemented
 
 As for building forms and validations we chose React Hook Form which is a library that helps you build forms with React and can be integrated with any other CSS libraries and performs validation with ease. It is designed to be lightweight, efficient, and easy to use. With React Hook Form, we can create custom React hooks to manage our form state and validations. This library could be a bit confusing but the documentation is really helpful [react-hook-form.com](https://react-hook-form.com/).
 
+8. **Axios**
+
+As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [Axios](https://axios-http.com/) 
+
 - ## Folder Structure
 
 Below is an example for the conventions and folder and file naming conventions which should be followed.
