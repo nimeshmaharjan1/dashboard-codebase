@@ -28,7 +28,7 @@ Followed by the data fetching tool we chose react query as it can be implemented
 
 7. **React Hook Form**
 
-As for building forms and validations we chose React Hook Form which is a library that helps you build forms with React and can be integrated with any other CSS libraries and performs validation with ease. It is designed to be lightweight, efficient, and easy to use. With React Hook Form, wecan create custom React hooks to manage our form state and validations. This library could be a bit confusing but the documentation is really helpful [react-hook-form.com](https://react-hook-form.com/).
+As for building forms and validations we chose React Hook Form which is a library that helps you build forms with React and can be integrated with any other CSS libraries and performs validation with ease. It is designed to be lightweight, efficient, and easy to use. With React Hook Form, we can create custom React hooks to manage our form state and validations. This library could be a bit confusing but the documentation is really helpful [react-hook-form.com](https://react-hook-form.com/).
 
 - ## Folder Structure
 
@@ -61,7 +61,7 @@ Any file which has [] around its name inside the pages directory will be treated
 ├─ README.md
 ├─ commitlint.config.js
 ├─ features
-│  ├─ home
+│  ├─ dashboard
 │  │  └─ components
 │  │     ├─ chart
 │  │     │  └─ index.tsx
@@ -77,16 +77,12 @@ Any file which has [] around its name inside the pages directory will be treated
 ├─ package.json
 ├─ pages # entry point and all the routes index.tsx is the / route.
 │  ├─ _app.tsx
-│  ├─ api
-│  │  ├─ auth
-│  │  │  └─ [...nextauth].ts
-│  │  └─ hello.ts
-│  ├─ auth
+│  ├─ auth
 │  │  └─ login
 │  │     ├─ index.tsx
 │  │     └─ login.module.scss
 │  ├─ index.tsx
-│  ├─ settings
+│  ├─ customers
 │  │  └─ index.tsx
 │  └─ users
 │     ├─ [userId]
