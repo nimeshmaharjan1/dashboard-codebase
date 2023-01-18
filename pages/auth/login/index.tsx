@@ -66,6 +66,7 @@ const Login = () => {
             <Content className={styles.content}>
                 <Card title={<h2 style={{ textAlign: 'center' }}>LOGIN</h2>} style={{ width: 400 }}>
                     <Form
+                        disabled={isFormDisabled}
                         name="basic"
                         labelCol={{ span: 8 }}
                         wrapperCol={{ span: 16 }}
