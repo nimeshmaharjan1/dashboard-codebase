@@ -195,7 +195,8 @@ import { styled } from '@emotion/styled'
 ```
 
 ```
-export const Button = styled.button`  padding: 32px;
+export const Button = styled.button`
+  padding: 32px;
   background-color: hotpink;
   font-size: 24px;
   border-radius: 4px;
@@ -206,7 +207,7 @@ export const Button = styled.button`  padding: 32px;
   }`
 ```
 
-#### Step 3: Import it in your folder and use it in className
+#### Step 3: Import it in your folder and use it as JSX tag
 
 ```
 import {Button} from './<name_of_your_file>'
