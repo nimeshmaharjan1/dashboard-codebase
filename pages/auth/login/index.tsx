@@ -1,7 +1,6 @@
 import { authOptions } from '@pages/api/auth/[...nextauth]';
 import { ILogin } from '@shared/interfaces/shared.interface';
-import { showToast, Types } from '@shared/utils/toast.util';
-import { Button, Card, Checkbox, Form, Input, Layout } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Layout, message } from 'antd';
 import { unstable_getServerSession } from 'next-auth';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -45,11 +44,11 @@ const Login = () => {
             const res = await signIn('credentials', { ...values, redirect: false });
             if (res?.error) {
                 setIsFormDisabled(false);
-                return showToast(Types.error, res.error);
+                message.error("Error message");
             }
-            showToast(Types.success, 'Successfully logged in.');
+            message.success("Success message");
         } catch (error) {
-            showToast(Types.error, 'Something went wrong while trying to login please try again.');
+            message.error("Error message");
             setIsFormDisabled(false);
         } finally {
             setIsLoading(false);
