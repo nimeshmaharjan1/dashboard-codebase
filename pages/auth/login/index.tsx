@@ -1,136 +1,109 @@
-import { EyeInvisibleOutlined, EyeTwoTone, GithubOutlined, GoogleOutlined, TwitterOutlined, UserOutlined } from '@ant-design/icons';
 import { authOptions } from '@pages/api/auth/[...nextauth]';
 import { ILogin } from '@shared/interfaces/shared.interface';
 import { showToast, Types } from '@shared/utils/toast.util';
-import { Button, Card, Col, Form, Input, Layout, Row } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Layout } from 'antd';
 import { unstable_getServerSession } from 'next-auth';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
-
 import styles from './login.module.scss';
 
 const { Content } = Layout;
 
 export const getServerSideProps = async (context: any) => {
-    const session = await unstable_getServerSession(context.req, context.res, authOptions)
+    const session = await unstable_getServerSession(context.req, context.res, authOptions);
     if (!session) {
         return {
             props: {
             }
-        }
+        };
     }
     return {
         redirect: {
             destination: '/',
             permanent: true
         }
-    }
-}
+    };
+};
 
 const Login = () => {
-    const { status } = useSession()
-    const router = useRouter()
+    const { status } = useSession();
+    const router = useRouter();
     const defaultValues = {
         username: '',
         password: ''
-    } as ILogin
-    const { formState: { errors }, handleSubmit, control } = useForm({ defaultValues, mode: 'onChange' })
+    } as ILogin;
+    const [form] = Form.useForm();
 
-    const [isLoading, setIsLoading] = React.useState(false)
-    const [isFormDisabled, setIsFormDisabled] = React.useState(false)
+    const [isLoading, setIsLoading] = React.useState(false);
+    const [isFormDisabled, setIsFormDisabled] = React.useState(false);
 
-    const login = async (values: ILogin) => {
-        setIsLoading(true)
-        setIsFormDisabled(true)
+    const onFinish = async (values: ILogin) => {
+        setIsLoading(true);
+        setIsFormDisabled(true);
         try {
-            const res = await signIn('credentials', { ...values, redirect: false })
+            const res = await signIn('credentials', { ...values, redirect: false });
             if (res?.error) {
-                setIsFormDisabled(false)
-                return showToast(Types.error, res.error)
+                setIsFormDisabled(false);
+                return showToast(Types.error, res.error);
             }
-            showToast(Types.success, 'Successfully logged in.')
+            showToast(Types.success, 'Successfully logged in.');
         } catch (error) {
-            showToast(Types.error, 'Something went wrong while trying to login please try again.')
-            setIsFormDisabled(false)
+            showToast(Types.error, 'Something went wrong while trying to login please try again.');
+            setIsFormDisabled(false);
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
-    }
+    };
 
     React.useEffect(() => {
         if (status === 'authenticated') {
-            router.push('/')
+            router.push('/');
         }
-    }, [router, status])
+    }, [router, status]);
 
     return (
         <Layout>
             <Content className={styles.content}>
                 <Card title={<h2 style={{ textAlign: 'center' }}>LOGIN</h2>} style={{ width: 400 }}>
-                    <Form layout='vertical' autoComplete={'off'} disabled={isFormDisabled}>
-                        <Controller
-                            control={control}
+                    <Form
+                        name="basic"
+                        labelCol={{ span: 8 }}
+                        wrapperCol={{ span: 16 }}
+                        initialValues={{ remember: true }}
+                        onFinish={onFinish}
+                        autoComplete="off"
+                    >
+                        <Form.Item
+                            label="Username"
                             name="username"
-                            rules={{ required: 'Username is required.' }}
-                            render={({
-                                field: { onChange, value, name, ref },
-                                fieldState: { error },
-                            }) => (
-                                <Form.Item label='Username'
-                                    hasFeedback={error ? true : false}
-                                    validateStatus={error && 'error'}
-                                    help={error?.message}>
-                                    <Input status={error && 'error'} onChange={onChange} value={value} ref={ref} name={name} placeholder="admin" suffix={<UserOutlined />} />
-                                </Form.Item>
+                            rules={[{ required: true, message: 'Please input your username!' }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                            )}
-                        />
-                        <Controller
-                            control={control}
+                        <Form.Item
+                            label="Password"
                             name="password"
-                            rules={{ required: 'Password is required.' }}
-                            render={({
-                                field: { onChange, value, name, ref },
-                                fieldState: { error },
-                            }) => (
-                                <Form.Item label='Password'
-                                    hasFeedback={error ? true : false}
-                                    validateStatus={error && 'error'}
-                                    help={error?.message}>
-                                    <Input.Password {...{ onChange, value, name, ref }} placeholder="admin" iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
-                                </Form.Item>
+                            rules={[{ required: true, message: 'Please input your password!' }]}
+                        >
+                            <Input.Password />
+                        </Form.Item>
 
-                            )}
-                        />
-                        <Form.Item style={{ marginTop: 30 }}>
-                            <Button loading={isLoading} block type="primary" htmlType='button' onClick={async (e) => {
-                                e.preventDefault()
-                                await handleSubmit(login)()
-                            }}>
-                                LOGIN
+                        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+                            <Checkbox>Remember me</Checkbox>
+                        </Form.Item>
+
+                        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                            <Button loading={isLoading} type="primary" htmlType="submit">
+                                Login
                             </Button>
                         </Form.Item>
-                        <Form.Item className={styles.or_line}>
-                            or login with
-                        </Form.Item>
-                        <Row gutter={12}>
-                            <Col xs={8} className={'flex-center'}>
-                                <Button block icon={<GoogleOutlined />}></Button>
-                            </Col>
-                            <Col xs={8} className={'flex-center'}>
-                                <Button block icon={<GithubOutlined />}></Button>
-                            </Col>
-                            <Col xs={8} className={'flex-center'}>
-                                <Button block icon={<TwitterOutlined />}></Button>
-                            </Col>
-                        </Row>
                     </Form>
                 </Card>
             </Content>
         </Layout>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

@@ -14,7 +14,6 @@ import { SessionProvider as AuthProvider } from "next-auth/react";
 
 import { Provider } from 'react-redux';
 
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -23,7 +22,7 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
-  pageProps: { session?: Session };
+  pageProps: { session?: Session; };
 };
 function App({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
 
@@ -45,9 +44,8 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLa
             </>
           )}</ConfigProvider>
       </AuthProvider>
-      <ToastContainer></ToastContainer>
     </Provider>
-  )
+  );
 
 }
 
