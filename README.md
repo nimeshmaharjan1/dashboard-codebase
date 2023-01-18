@@ -182,7 +182,7 @@ return <Button className={redButton}>Click me</Button>
 
 ## Using @emotion/styled
 
-    This method is mostly useful when you have to add new html tags like div, aside or whatever you like and write a css in that tag
+This method is mostly useful when you have to add new html tags like div, aside or whatever you like and write a css in that tag
 
 ### _Example of using this method._
 
