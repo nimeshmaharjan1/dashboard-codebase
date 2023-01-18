@@ -147,8 +147,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 There are basically two ways of using emotion:
 
-a) @emotion/css \*\*
-b) @emotion/styled
+a) @emotion/css <br/>
+b) @emotion/styled <br/>
 
 ## Using @emotion/css
 
