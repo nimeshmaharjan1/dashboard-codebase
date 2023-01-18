@@ -143,22 +143,26 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## CSS USAGE
+# CSS USAGE
 
 There are basically two ways of using emotion:
 
 a) @emotion/css
 b) @emotion/styled
 
-a) @emotion/css
+## Using @emotion/css
 
 This method is mostly used if you have to override some CSS property an write you own custom css on existing CSS Framework or UI library such as: Bootstrap, ant design, material ui etc..
 
 ### _Example of using this method._
 
-#### \_Step 1: Create .styles.ts folder following the folder structure mentioned above
+#### Step 1: Create .styles.ts folder following the folder structure mentioned above
 
 #### _Step 2: Write your CSS like:_
+
+```
+import { css } from '@emotion/css'
+```
 
 ```
 export const redButton = css`
@@ -166,14 +170,50 @@ export const redButton = css`
 `
 ```
 
-#### \_Step 3: Import it in your folder and use it in className
+#### Step 3: Import it in your folder and use it in className
 
 ```
 import {redButton} from './<name_of_your_file>'
 ```
 
 ```
-<Button className={redButton}>Click me</Button>
+return <Button className={redButton}>Click me</Button>
+```
+
+## Using @emotion/styled
+
+    This method is mostly useful when you have to add new html tags like div, aside or whatever you like and write a css in that tag
+
+### _Example of using this method._
+
+#### Step 1: Create .styles.ts folder following the folder structure mentioned above
+
+#### _Step 2: Write your CSS like:_
+
+```
+import { styled } from '@emotion/styled'
+```
+
+```
+const Button = styled.button`  padding: 32px;
+  background-color: hotpink;
+  font-size: 24px;
+  border-radius: 4px;
+  color: black;
+  font-weight: bold;
+  &:hover {
+    color: white;
+  }`
+```
+
+#### Step 3: Import it in your folder and use it in className
+
+```
+import {Button} from './<name_of_your_file>'
+```
+
+```
+return <Button>Click me</Button>
 ```
 
 ## Learn More
