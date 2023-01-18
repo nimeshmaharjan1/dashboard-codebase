@@ -26,6 +26,10 @@ As for the global state management tool we have chosen the newly introduced redu
 
 As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [axios-http.com/](https://axios-http.com/)
 
+7. **Emotion UI**
+
+As for writing custom css we have used Emotion Ui which is a library designed for writing CSS Javascript.We suggest you to go once through the documentation of [emotion.sh/](https://emotion.sh/docs/introduction)
+
 - ## Folder Structure
 
 Below is an example for the conventions and folder and file naming conventions which should be followed.
@@ -41,21 +45,6 @@ The document structure of the DOM can be altered from the \_document.js file ins
 Any file which has [] around its name inside the pages directory will be treated as a dynamic page by Next automatically.
 
 ```
-📦
-├─ .env.example
-├─ .eslintrc.json # ESlint configuration file can be changed to .js file
-├─ .gitignore
-├─ .husky
-│  ├─ commit-msg
-│  ├─ pre-commit
-│  └─ pre-push
-├─ .npmrc
-├─ .prettierignore
-├─ .prettierrc # Prettier configuration file can be changed to .js or .json file
-├─ .vscode
-│  └─ settings.json # common vscode settings file
-├─ README.md
-├─ commitlint.config.js
 ├─ features
 │  ├─ dashboard
 │  │  └─ components
@@ -76,7 +65,7 @@ Any file which has [] around its name inside the pages directory will be treated
 │  ├─ auth
 │  │  └─ login
 │  │     ├─ index.tsx
-│  │     └─ login.module.scss
+│  │     └─ login.styles.ts
 │  ├─ index.tsx
 │  ├─ customers
 │  │  └─ index.tsx
@@ -86,7 +75,7 @@ Any file which has [] around its name inside the pages directory will be treated
 │     ├─ create
 │     │  └─ index.tsx
 │     ├─ index.tsx
-│     └─ users.module.scss
+│     └─ users.styles.ts
 ├─ public
 │  ├─ favicon.ico
 │  └─ vercel.svg
@@ -110,7 +99,7 @@ Any file which has [] around its name inside the pages directory will be treated
 │  │     ├─ header
 │  │     │  └─ index.tsx
 │  │     ├─ index.tsx
-│  │     ├─ main-layout.scss
+│  │     ├─ main-layout.styles.ts
 │  │     └─ side-bar
 │  │        └─ index.tsx
 │  └─ utils
@@ -121,7 +110,7 @@ Any file which has [] around its name inside the pages directory will be treated
 │     └─ user-slice
 │        └─ index.ts
 ├─ styles
-│  └─ globals.scss
+│  └─ main-layout.styles.ts
 ├─ tsconfig.json
 └─ yarn.lock
 ```
@@ -153,6 +142,39 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## CSS USAGE
+
+There are basically two ways of using emotion:
+
+a) @emotion/css
+b) @emotion/styled
+
+a) @emotion/css
+
+This method is mostly used if you have to override some CSS property an write you own custom css on existing CSS Framework or UI library such as: Bootstrap, ant design, material ui etc..
+
+### _Example of using this method._
+
+#### \_Step 1: Create .styles.ts folder following the folder structure mentioned above
+
+#### _Step 2: Write your CSS like:_
+
+```
+export const redButton = css`
+  background-color: red;
+`
+```
+
+#### \_Step 3: Import it in your folder and use it in className
+
+```
+import {redButton} from './<name_of_your_file>'
+```
+
+```
+<Button className={redButton}>Click me</Button>
+```
 
 ## Learn More
 
