@@ -26,9 +26,9 @@ As for the global state management tool we have chosen the newly introduced redu
 
 As for data fetching from backend we chose axios which is a package that helps you make HTTPRequests with ease. It also helps to intercept request and response and transform request and response data.For better understanding of how axios works you can go through the documentation of axios [axios-http.com/](https://axios-http.com/)
 
-7. **Emotion UI**
+7. **Emotion**
 
-As for writing custom css we have used Emotion Ui which is a library designed for writing CSS Javascript.We suggest you to go once through the documentation of [emotion.sh/](https://emotion.sh/docs/introduction)
+As for writing custom css we have used Emotion which is a library designed for writing CSS Javascript.We suggest you to go once through the documentation of [emotion.sh/](https://emotion.sh/docs/introduction)
 
 - ## Folder Structure
 
@@ -152,7 +152,7 @@ b) @emotion/styled <br/>
 
 ## Using @emotion/css
 
-This method is mostly used if you have to override some CSS property an write you own custom css on existing CSS Framework or UI library such as: Bootstrap, ant design, material ui etc..
+This method is mostly used if you have to override some CSS property and write your own custom CSS on existing CSS Framework or UI library such as: Bootstrap, ant design, material ui etc..
 
 ### _Example of using this method._
 
@@ -160,29 +160,29 @@ This method is mostly used if you have to override some CSS property an write yo
 
 #### _Step 2: Write your CSS like:_
 
-```
-import { css } from '@emotion/css'
+```js
+import { css } from '@emotion/css';
 ```
 
-```
+```js
 export const redButton = css`
   background-color: red;
-`
+`;
 ```
 
 #### Step 3: Import it in your folder and use it in className
 
-```
-import {redButton} from './<name_of_your_file>'
+```js
+import { redButton } from './<name_of_your_file>';
 ```
 
-```
-return <Button className={redButton}>Click me</Button>
+```js
+return <Button className={redButton}>Click me</Button>;
 ```
 
 ## Using @emotion/styled
 
-This method is mostly useful when you have to add new html tags like div, aside or whatever you like and write a css in that tag
+This method is mostly useful when you have to add new html tags like div, aside or whatever you like and write a CSS in that tag
 
 ### _Example of using this method._
 
@@ -190,11 +190,11 @@ This method is mostly useful when you have to add new html tags like div, aside 
 
 #### _Step 2: Write your CSS like:_
 
-```
-import { styled } from '@emotion/styled'
+```js
+import { styled } from '@emotion/styled';
 ```
 
-```
+```js
 export const Button = styled.button`
   padding: 32px;
   background-color: hotpink;
@@ -204,17 +204,18 @@ export const Button = styled.button`
   font-weight: bold;
   &:hover {
     color: white;
-  }`
+  }
+`;
 ```
 
 #### Step 3: Import it in your folder and use it as JSX tag
 
-```
-import {Button} from './<name_of_your_file>'
+```js
+import { Button } from './<name_of_your_file>';
 ```
 
-```
-return <Button>Click me</Button>
+```js
+return <Button>Click me</Button>;
 ```
 
 ## Learn More
