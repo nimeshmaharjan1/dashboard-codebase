@@ -156,7 +156,7 @@ This method is mostly used if you have to override some CSS property and write y
 
 ### _Example of using this method._
 
-#### Step 1: Create .styles.ts folder following the folder structure mentioned above
+#### Step 1: Create .styles.ts file following the folder structure mentioned above
 
 #### _Step 2: Write your CSS like:_
 
@@ -186,7 +186,7 @@ This method is mostly useful when you have to add new html tags like div, aside 
 
 ### _Example of using this method._
 
-#### Step 1: Create .styles.ts folder following the folder structure mentioned above
+#### Step 1: Create .styles.ts file following the folder structure mentioned above
 
 #### _Step 2: Write your CSS like:_
 
@@ -217,6 +217,16 @@ import { Button } from './<name_of_your_file>';
 ```js
 return <Button>Click me</Button>;
 ```
+
+## Naming Convention
+
+### For declaring variables we will be using camelCase variable names throughout the project like
+
+```js
+const handleLoginSubmit = () => {};
+```
+
+### And for creating a folder we use dash in between the words with all small letters like: <br/>user-profile
 
 ## Learn More
 
