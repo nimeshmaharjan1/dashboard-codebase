@@ -228,6 +228,11 @@ const handleLoginSubmit = () => {};
 
 ### And for creating a folder we use dash in between the words with all small letters like: <br/>user-profile
 
+# Code commenting
+
+  Here a some simple rules that must be followed while writing comments on your codebase
+  
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
