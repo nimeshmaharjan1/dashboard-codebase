@@ -1,13 +1,13 @@
 import { toast } from 'react-toastify';
 
-export enum Types {
+export enum TOAST_TYPES {
   info,
   success,
   error,
   warning,
 }
 
-export const showToast = (type: Types, message: string) => {
+export const showToast = (type: TOAST_TYPES, message: string) => {
   const defaultValues = {
     position: 'top-right',
     autoClose: 5000,
@@ -19,13 +19,13 @@ export const showToast = (type: Types, message: string) => {
     theme: 'light',
   } as any;
   switch (type) {
-    case Types.info:
+    case TOAST_TYPES.info:
       toast.info(message, defaultValues);
       break;
-    case Types.error:
+    case TOAST_TYPES.error:
       toast.error(message, defaultValues);
       break;
-    case Types.success:
+    case TOAST_TYPES.success:
       toast.success(message, defaultValues);
       break;
     default:
